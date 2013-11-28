@@ -9,7 +9,8 @@ else
   TAR=solr-$SOLR_VERSION.tgz
 fi
 
-tar -xf $TAR solr-$SOLR_VERSION/dist/solr-$SOLR_VERSION.war
+tar -xf $TAR solr-$SOLR_VERSION/dist/solr-$SOLR_VERSION.war solr-$SOLR_VERSION/example/lib/ext
 unzip -d $1/ROOT solr-$SOLR_VERSION/dist/solr-$SOLR_VERSION.war
 mkdir $1/ROOT/WEB-INF/solr
 cp -a solr.xml jelly $1/ROOT/WEB-INF/solr
+cp solr-$SOLR_VERSION/example/lib/ext/* $1/ROOT/WEB-INF/lib
