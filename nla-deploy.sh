@@ -11,5 +11,5 @@ fi
 
 tar -xf $TAR solr-$SOLR_VERSION/dist/solr-$SOLR_VERSION.war
 unzip -d $1/ROOT solr-$SOLR_VERSION/dist/solr-$SOLR_VERSION.war
-mkdir $1/ROOT/WEB-INF/classes/
-cp -a solr.xml jelly $1/ROOT/WEB-INF/classes/
+mkdir $1/ROOT/WEB-INF/solr
+cp -a solr.xml jelly $1/ROOT/WEB-INF/solr
