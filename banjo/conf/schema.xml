@@ -248,9 +248,9 @@
    <field name="_version_" type="long" indexed="true" stored="true"/>
 
    <!-- Dynamic fields -->
-   <dynamicField name="*_str" type="string" indexed="true" stored="true"/> 
-   <dynamicField name="*_sort" type="lowercase" indexed="true" stored="false"/> 
-   
+   <dynamicField name="*_str" type="string" indexed="true" stored="false"/>
+   <dynamicField name="*_sort" type="lowercase" indexed="true" stored="false"/>
+
  </fields>
 
 
@@ -292,7 +292,7 @@
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
   <copyField source="creator" dest="creator_str"/>
-  
+
   <!-- Copy fields for sorting -->
   <copyField source="title" dest="title_sort"/>
   <copyField source="creator" dest="creator_sort"/>
