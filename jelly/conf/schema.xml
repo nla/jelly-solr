@@ -105,69 +105,23 @@
       and back compatibility is not guaranteed.  Names with both leading and
       trailing underscores (e.g. _version_) are reserved.
    -->
-        
+
    <field name="id" type="long" indexed="true" stored="true" required="true" /> 
    <field name="collection" type="text_general" indexed="true" stored="true"/>
    <field name="type" type="string" indexed="true" stored="true"/>
    <field name="sub_type" type="string" indexed="true" stored="true"/>
-   <field name="pi" type="text_general" indexed="true" stored="true"/>
-   <field name="bib_id" type="text_general" indexed="true" stored="true"/>
-   <field name="title" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="pi" type="string" indexed="true" stored="true"/>
+   <field name="bib_id" type="string" indexed="true" stored="true"/>
+   <field name="title" type="text_general" indexed="true" stored="true"/>
    <field name="sub_title" type="text_general" indexed="true" stored="true"/>
-   <field name="creator" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="creator" type="text_general" indexed="true" stored="true"/>
+   <field name="publisher" type="text_general" indexed="true" stored="true"/>
    <field name="issn" type="string" indexed="true" stored="true"/>
-   <field name="date" type="string" indexed="true" stored="true"/>
    <field name="abstract" type="text_general" indexed="true" stored="true"/>
    <field name="category" type="text_general" indexed="true" stored="true"/>
-   <field name="copy_role" type="string" indexed="true" stored="true"/>
-   <field name="carrier" type="text_general" indexed="true" stored="true"/>
-   <field name="file_size" type="long" indexed="true" stored="true"/>
    <field name="ocr_content" type="ocr_type" indexed="true" stored="true"/>
    <field name="ocr_id_box" type="string" indexed="false" stored="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
-
-   <!-- additional fields added on the 05/12/2013 to cater for additional metadata in amber -->
-   <!-- for a work, the following additions of metadata is indexed -->
-   <field name="publisher" type="string" indexed="true" stored="true"/>
-   <field name="record_source" type="string" indexed="true" stored="true"/>
-   <field name="copyright_policy" type="string" indexed="true" stored="true"/>
-   <field name="first_part" type="string" indexed="true" stored="true"/>
-   <field name="public_notes" type="string" indexed="true" stored="true"/>
-   <field name="dcm_work_pid" type="string" indexed="true" stored="true"/>
-   <field name="dcm_date_time_updated" type="string" indexed="true" stored="true"/>
-   <field name="dcm_record_creator" type="string" indexed="true" stored="true"/>
-   <field name="dcm_record_updater" type="string" indexed="true" stored="true"/>
-   <field name="sub_unit_type" type="string" indexed="true" stored="true"/>
-   <field name="sub_unit_no" type="string" indexed="true" stored="true"/>
-   <field name="form" type="string" indexed="true" stored="true"/>
-   <field name="bib_level" type="string" indexed="true" stored="true"/>
-   <field name="digital_status" type="string" indexed="true" stored="true"/>
-   <field name="digital_status_date" type="string" indexed="true" stored="true"/>
-   <field name="holding_number" type="string" indexed="true" stored="true"/>
-
-   <!-- for a work, the master copy is indexed with the following metadata -->
-   <field name="copy_type" type="string" indexed="true" stored="true"/>
-   <field name="local_system_number" type="string" indexed="true" stored="true"/>
-   <field name="material_type" type="string" indexed="true" stored="true"/>
-
-   <!-- for a master copy, its file is indexed with the following metadata -->
-   <field name="doss_id" type="long" indexed="true" stored="true"/>
-   <field name="mime_type" type="string" indexed="true" stored="true"/>
-   <field name="file_name" type="string" indexed="true" stored="true"/>
-   <field name="file_format" type="string" indexed="true" stored="true"/>
-   <field name="file_format_version" type="string" indexed="true" stored="true"/>
-   <field name="compression" type="string" indexed="true" stored="true"/>
-   <field name="checksum" type="string" indexed="true" stored="true"/>
-   <field name="checksum_type" type="string" indexed="true" stored="true"/>
-   <field name="device" type="string" indexed="true" stored="true"/>
-   <field name="device_serial_number" type="string" indexed="true" stored="true"/>
-   <field name="software" type="string" indexed="true" stored="true"/>
-   <field name="software_serial_number" type="string" indexed="true" stored="true"/>
-   <field name="resolution" type="string" indexed="true" stored="true"/>
-   <field name="colour_space" type="string" indexed="true" stored="true"/>
-   <field name="orientation" type="string" indexed="true" stored="true"/>
-   <field name="image_width" type="int" indexed="true" stored="true"/>
-   <field name="image_length" type="int" indexed="true" stored="true"/>
 
    <!-- Not used any more -->
    <!--field name="ocr" type="ocr_payloads_type" indexed="true" stored="true"/-->
