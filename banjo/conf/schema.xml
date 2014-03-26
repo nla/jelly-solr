@@ -131,9 +131,13 @@
    <field name="extent" type="text_general" indexed="true" stored="true"/>
    <field name="language" type="text_general" indexed="true" stored="true"/>
    <field name="dcm_date_time_created" type="date" indexed="true" stored="true"/>
-   <field name="dcm_record_creator" type="text_general" indexed="true" stored="true"/>
+   <field name="dcm_record_creator" type="string" indexed="true" stored="true"/>
    <field name="dcm_date_time_updated" type="date" indexed="true" stored="true"/>
-   <field name="dcm_record_updater" type="text_general" indexed="true" stored="true"/>
+   <field name="dcm_record_updater" type="string" indexed="true" stored="true"/>
+   <field name="date_time_created" type="date" indexed="true" stored="true"/>
+   <field name="record_creator" type="string" indexed="true" stored="true"/>
+   <field name="date_time_updated" type="date" indexed="true" stored="true"/>
+   <field name="record_updater" type="string" indexed="true" stored="true"/>
    <field name="digital_status_date" type="date" indexed="true" stored="true"/>
    <field name="addressee" type="text_general" indexed="true" stored="true"/>
    <field name="record_source" type="string" indexed="true" stored="true"/>
@@ -166,7 +170,8 @@
 
    <!-- Copy fields -->
    <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
-        dcm_date_time_created, dcm_record_creator, dcm_date_time_updated, dcm_record_updater: same as work -->
+        dcm_date_time_created, dcm_record_creator, dcm_date_time_updated, dcm_record_updater,
+        date_time_created, record_creator, date_time_updated, record_updater: same as work -->
    <!-- link copy to work -->
    <field name="work_id" type="long" indexed="true" stored="true"/>
    <field name="work_pi" type="string" indexed="true" stored="true"/>
