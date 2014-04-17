@@ -27,3 +27,15 @@ Television, Televisions, TV, TVs
 # Synonym mappings can be used for spelling correction too
 pixima => pixma
 
+
+
+
+nla.aus =>  Australian
+nla.ms  =>  Manuscript
+nla.map =>  Map
+nla.mus =>  Music
+nla.pic =>  Picture
+nla.gen =>  General
+nla.oh  =>  Oral history and folklore
+nla.int =>  Internal photograph 
+nla.con =>  Conservation
