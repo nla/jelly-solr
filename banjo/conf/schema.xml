@@ -158,7 +158,8 @@
    <field name="alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="internal_comments" type="text_general" indexed="true" stored="true"/>
    <field name="external_comments" type="text_general" indexed="true" stored="true"/>
-   <field name="access_restrictions" type="string" indexed="true" stored="true"/>
+   <field name="access_conditions" type="string" indexed="true" stored="true"/>
+   <field name="internal_access_conditions" type="string" indexed="true" stored="true"/>
    <field name="expiry_date" type="date" indexed="true" stored="true"/>
    <field name="constraint" type="text_general" indexed="true" stored="true"/>
    <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
@@ -291,7 +292,8 @@
   <copyField source="series" dest="text"/>
   <copyField source="form" dest="text"/>
   <copyField source="encoding_level" dest="text"/>
-  <copyField source="access_restrictions" dest="text"/>
+  <copyField source="access_conditions" dest="text"/>
+  <copyField source="internal_access_conditions" dest="text"/>
   <copyField source="subject" dest="text"/>
 
   <!-- Copy fields for facetting -->
