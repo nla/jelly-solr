@@ -194,6 +194,7 @@
    <field name="segment_indicator" type="text_general" indexed="true" stored="true"/>
    <field name="surface" type="text_general" indexed="true" stored="true"/>
    <field name="carrier_duration" type="text_general" indexed="true" stored="true"/>
+   <field name="carrier_capacity" type="text_general" indexed="true" stored="true"/>
    <field name="reel_size" type="text_general" indexed="true" stored="true"/>
    <field name="channels" type="int" indexed="true" stored="true"/>
    <field name="sound_field" type="text_general" indexed="true" stored="true"/>
