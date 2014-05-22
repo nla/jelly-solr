@@ -165,6 +165,7 @@
    <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
    <field name="issue_date" type="date" indexed="true" stored="true"/>
    <field name="holding_number" type="text_general" indexed="true" stored="true"/>
+   <field name="rights" type="text_general" indexed="true" stored="true"/>
 
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
