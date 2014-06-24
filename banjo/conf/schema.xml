@@ -203,15 +203,53 @@
    <field name="duration_type" type="text_general" indexed="true" stored="true"/>
    <field name="equalisation" type="text_general" indexed="true" stored="true"/>
 
+   <!-- Copy fields from Tiff extraction: general metadata -->
+   <!-- creator, and creator statement already exist -->
+   <field name="alternative_title" type="text_general" indexed="true" stored="true"/>
+   <field name="heading" type="text_general" indexed="true" stored="true"/>
+
+   <!-- Copy fields from Tiff extraction: IPTC metadata -->
+   <field name="sublocation" type="text_general" indexed="true" stored="ture"/>
+   <field name="city" type="text_general" indexed="true" stored="ture"/>
+   <field name="province" type="text_general" indexed="true" stored="ture"/>
+   <field name="country" type="text_general" indexed="true" stored="ture"/>
+   <field name="iso_country_code" type="text_general" indexed="true" stored="ture"/>
+   <field name="world_region" type="text_general" indexed="true" stored="ture"/>
+   <field name="digital_source_type" type="text_general" indexed="true" stored="ture"/>
+   <field name="event" type="text_general" indexed="true" stored="ture"/>
+
+   <!-- Copy fields from Tiff extraction: GeoCoding metadata -->
+   <field name="gps_version" type="text_general" indexed="true" stored="ture"/>
+   <field name="latitude" type="text_general" indexed="true" stored="ture"/>
+   <field name="longitude" type="text_general" indexed="true" stored="ture"/>
+   <field name="latitude_ref" type="text_general" indexed="true" stored="ture"/>
+   <field name="longitude_ref" type="text_general" indexed="true" stored="ture"/>
+   <field name="map_datum" type="text_general" indexed="true" stored="ture"/>
+   <field name="gps_timestamp" type="date" indexed="true" stored="true"/>
+
+   <!-- Copy fields from Tiff extraction: camera metadata -->
+   <field name="exposure_time" type="text_general" indexed="true" stored="ture"/>
+   <field name="exposure_fnumber" type="text_general" indexed="true" stored="ture"/>
+   <field name="exposure_mode" type="text_general" indexed="true" stored="ture"/>
+   <field name="exposure_program" type="text_general" indexed="true" stored="ture"/>
+   <field name="iso_speed_rating" type="text_general" indexed="true" stored="ture"/>
+   <field name="focal_length" type="text_general" indexed="true" stored="ture"/>
+   <field name="lens" type="date" indexed="true" stored="true"/>
+   <field name="metering_mode" type="date" indexed="true" stored="true"/>
+   <field name="white_balance" type="date" indexed="true" stored="true"/>
+   <field name="file_source" type="date" indexed="true" stored="true"/>
+
    <!-- File fields -->
    <field name="doss_id" type="long" indexed="true" stored="true"/>
    <field name="file_name" type="string" indexed="true" stored="true"/>
    <field name="mime_type" type="text_general" indexed="true" stored="true"/>
    <field name="file_format" type="text_general" indexed="true" stored="true"/>
+   <field name="format_version" type="text_general" indexed="true" stored="true"/>
    <field name="file_size" type="long" indexed="true" stored="true"/>
    <field name="bit_depth" type="int" indexed="true" stored="true"/>
    <field name="encoding" type="text_general" indexed="true" stored="true"/>
    <field name="resolution" type="text_general" indexed="true" stored="true"/>
+   <field name="resolution_unit" type="text_general" indexed="true" stored="true"/>
    <field name="colour_space" type="text_general" indexed="true" stored="true"/>
    <field name="orientation" type="text_general" indexed="true" stored="true"/>
    <field name="image_width" type="int" indexed="true" stored="true"/>
@@ -227,7 +265,7 @@
    <field name="block_align" type="int" indexed="true" stored="true"/>
    <field name="frame_rate" type="int" indexed="true" stored="true"/>
    <field name="file_container" type="text_general" indexed="true" stored="true"/>
-   <field name="bit_rate" type="int" indexed="true" stored="true"/>
+   <field name="bit_rate" type="int" indexed="true" stored="true"/> <!-- a.k.a: bitDepth -->
    <field name="codec" type="text_general" indexed="true" stored="true"/>
    <field name="sampling_rate" type="int" indexed="true" stored="true"/>
 
