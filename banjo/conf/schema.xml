@@ -134,8 +134,10 @@
    <field name="dcm_record_creator" type="string" indexed="true" stored="true"/>
    <field name="dcm_date_time_updated" type="date" indexed="true" stored="true"/>
    <field name="dcm_record_updater" type="string" indexed="true" stored="true"/>
-   <field name="date_time_updated" type="date" indexed="true" stored="true" multiValued="true"/>
-   <field name="record_updater" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="date_time_created" type="date" indexed="true" stored="true"/>
+   <field name="record_creator" type="string" indexed="true" stored="true"/>	
+   <field name="date_time_updated" type="date" indexed="true" stored="true" />
+   <field name="record_updater" type="string" indexed="true" stored="true" />
    <field name="digital_status_date" type="date" indexed="true" stored="true"/>
    <field name="addressee" type="text_general" indexed="true" stored="true"/>
    <field name="record_source" type="string" indexed="true" stored="true"/>
