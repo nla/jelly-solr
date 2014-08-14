@@ -1,5 +1,7 @@
 Example jettyctl config:
 
+###Latest Jelly Solr version : 1.2.0
+
 ```sh
 PORT=10340
 REPO=git@github.com:nla/jelly-solr.git
