@@ -1,6 +1,6 @@
 Example jettyctl config:
 
-###Latest Jelly Solr version : 1.2.0
+###Latest Jelly Solr version : 1.2.1
 
 ```sh
 PORT=10340
