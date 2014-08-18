@@ -236,10 +236,10 @@
    <field name="exposure_program" type="text_general" indexed="true" stored="ture"/>
    <field name="iso_speed_rating" type="text_general" indexed="true" stored="ture"/>
    <field name="focal_length" type="text_general" indexed="true" stored="ture"/>
-   <field name="lens" type="date" indexed="true" stored="true"/>
-   <field name="metering_mode" type="date" indexed="true" stored="true"/>
-   <field name="white_balance" type="date" indexed="true" stored="true"/>
-   <field name="file_source" type="date" indexed="true" stored="true"/>
+   <field name="lens" type="text_general" indexed="true" stored="true"/>
+   <field name="metering_mode" type="text_general" indexed="true" stored="true"/>
+   <field name="white_balance" type="text_general" indexed="true" stored="true"/>
+   <field name="file_source" type="text_general" indexed="true" stored="true"/>
 
    <!-- File fields -->
    <field name="doss_id" type="long" indexed="true" stored="true"/>
