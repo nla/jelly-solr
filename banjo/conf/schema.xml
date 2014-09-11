@@ -171,7 +171,7 @@
    <field name="more_ilms_details_provided" type="boolean" indexed="true" stored="true"/>
    <field name="ilms_sent_date_time" type="date" indexed="true" stored="true"/>
    <field name="sensitive_material" type="string" indexed="true" stored="true"/>
-   <field name="sensitive_reason" type="string" indexed="true" stored="true"/>
+   <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
 
