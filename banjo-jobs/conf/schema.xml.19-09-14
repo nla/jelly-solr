@@ -47,7 +47,7 @@
     that avoids logging every request
 -->
 
-<schema name="example" version="1.5">
+<schema name="banjo-jobs" version="1.5">
   <!-- attribute "name" is the name of this schema and is only used for display purposes.
        version="x.y" is Solr's version number for the schema syntax and 
        semantics.  It should not normally be changed by applications.
@@ -107,199 +107,77 @@
       and back compatibility is not guaranteed.  Names with both leading and
       trailing underscores (e.g. _version_) are reserved.
    -->
-
-   <!-- Work fields -->
-   <field name="id" type="long" indexed="true" stored="true" required="true" /> 
-   <field name="pi" type="string" indexed="true" stored="true"/>
-   <field name="type" type="string" indexed="true" stored="true"/>
-   <field name="sub_type" type="string" indexed="true" stored="true"/>
-   <field name="bib_id" type="string" indexed="true" stored="true"/>
+   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <!-- unique key: id + start Commit ID -->
+   <field name="id" type="string" indexed="true" stored="true" required="true" />   
+   <field name="id_sort" type="long" indexed="true" stored="true"/>
+   <field name="type" type="string" indexed="true" stored="true" required="true" />  
+   <field name="name" type="text_general" indexed="true" stored="true"/>   
+   <field name="status" type="string" indexed="true" stored="true"/>   
+   <field name="project_id" type="long" indexed="true" stored="true"/>
+    <!-- job details -->
+   <field name="description" type="text_general" indexed="true" stored="true"/>
+   <field name="docworks_profile_id" type="long" indexed="true" stored="true"/>
+   <field name="assigned_to" type="string" indexed="true" stored="true"/>
+   <field name="reference_number" type="string" indexed="true" stored="true"/>
+   <field name="requestor" type="string" indexed="true" stored="true"/>
+   <field name="auto_acquit" type="string" indexed="true" stored="true"/>
+   <field name="qa_by" type="string" indexed="true" stored="true"/>
+   <field name="amber_session_id" type="long" indexed="true" stored="true"/>
+   <field name="agent" type="text_general" indexed="true" stored="true"/>
+   <field name="file_system_upload" type="string" indexed="true" stored="true"/>
+   <field name="job_type" type="string" indexed="true" stored="true"/>
+   <field name="secured" type="string" indexed="true" stored="true"/>
+   <field name="instructions_to_uploader" type="text_general" indexed="true" stored="true"/>
+   <!-- job items -->
+   <field name="job_id" type="long" indexed="true" stored="true"/>
+   <field name="bib_id" type="long" indexed="true" stored="true"/>
    <field name="collection" type="string" indexed="true" stored="true"/>
-   <field name="title" type="text_general" indexed="true" stored="true"/>
-   <field name="sub_unit_type" type="text_general" indexed="true" stored="true"/>
-   <field name="sub_unit_no" type="text_general" indexed="true" stored="true"/>
-   <field name="first_part" type="string" indexed="true" stored="true"/>
-   <field name="immutable" type="string" indexed="true" stored="true"/>
-   <field name="form" type="string" indexed="true" stored="true"/>
-   <field name="bib_level" type="string" indexed="true" stored="true"/>
-   <field name="digital_status" type="string" indexed="true" stored="true"/>
-   <field name="creator" type="text_general" indexed="true" stored="true"/>
-   <field name="creator_statement" type="text_general" indexed="true" stored="true"/>
-   <field name="edition" type="text_general" indexed="true" stored="true"/>
-   <field name="publisher" type="text_general" indexed="true" stored="true"/>
-   <field name="start_date" type="date" indexed="true" stored="true"/>
-   <field name="end_date" type="date" indexed="true" stored="true"/>
-   <field name="extent" type="text_general" indexed="true" stored="true"/>
-   <field name="language" type="text_general" indexed="true" stored="true"/>
-   <field name="dcm_date_time_created" type="date" indexed="true" stored="true"/>
-   <field name="dcm_record_creator" type="string" indexed="true" stored="true"/>
-   <field name="dcm_date_time_updated" type="date" indexed="true" stored="true"/>
-   <field name="dcm_record_updater" type="string" indexed="true" stored="true"/>
-   <field name="date_time_created" type="date" indexed="true" stored="true"/>
-   <field name="record_creator" type="string" indexed="true" stored="true"/>	
-   <field name="date_time_updated" type="date" indexed="true" stored="true" />
-   <field name="record_updater" type="string" indexed="true" stored="true" />
-   <field name="digital_status_date" type="date" indexed="true" stored="true"/>
-   <field name="addressee" type="text_general" indexed="true" stored="true"/>
-   <field name="record_source" type="string" indexed="true" stored="true"/>
-   <field name="local_system_no" type="string" indexed="true" stored="true"/>
-   <field name="encoding_level" type="text_general" indexed="true" stored="true"/>
-   <field name="genre" type="text_general" indexed="true" stored="true"/>
-   <field name="publication_category" type="text_general" indexed="true" stored="true"/>
-   <field name="series" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="classification" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="contributor" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="coverage" type="text_general" indexed="true" stored="true"/>
-   <field name="occupation" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="other_title" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="standard_id" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="subject" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="scale_etc" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="dcm_work_pid" type="string" indexed="true" stored="true"/>
-   <field name="alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="internal_comments" type="text_general" indexed="true" stored="true"/>
-   <field name="external_comments" type="text_general" indexed="true" stored="true"/>
-   <field name="access_conditions" type="string" indexed="true" stored="true"/>
-   <field name="internal_access_conditions" type="string" indexed="true" stored="true"/>
-   <field name="expiry_date" type="int" indexed="true" stored="true"/>
-   <field name="constraint" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
-   <field name="issue_date" type="date" indexed="true" stored="true"/>
-   <field name="holding_number" type="text_general" indexed="true" stored="true"/>
-   <field name="rights" type="text_general" indexed="true" stored="true"/>
-   <field name="send_to_ilms" type="boolean" indexed="true" stored="true"/>
-   <field name="more_ilms_details_required" type="boolean" indexed="true" stored="true"/>
-   <field name="ilms_sent_date_time" type="date" indexed="true" stored="true"/>
-   <field name="sensitive_material" type="string" indexed="true" stored="true"/>
-   <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
-   <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
-
-   <!-- Copy fields -->
-   <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
-        dcm_date_time_created, dcm_record_creator, dcm_date_time_updated, dcm_record_updater,
-        date_time_created, record_creator, date_time_updated, record_updater: same as work -->
-   <!-- link copy to work -->
-   <field name="work_id" type="long" indexed="true" stored="true"/>
-   <field name="work_pi" type="string" indexed="true" stored="true"/>
-   <field name="dcm_copy_pid" type="string" indexed="true" stored="true"/>
-   <field name="material_type" type="text_general" indexed="true" stored="true"/>
-   <field name="other_no_type" type="text_general" indexed="true" stored="true"/>
-   <field name="other_no" type="text_general" indexed="true" stored="true"/>
-   <field name="copy_type" type="string" indexed="true" stored="true"/>
-   <field name="copy_role" type="string" indexed="true" stored="true"/>
-   <field name="carrier" type="text_general" indexed="true" stored="true"/>
-   <field name="date_created" type="date" indexed="true" stored="true"/>
-   <field name="source_copy" type="string" indexed="true" stored="true"/>
-   <field name="condition" type="text_general" indexed="true" stored="true"/>
-   <field name="exhibition" type="text_general" indexed="true" stored="true"/>
-   <field name="acquisition_status" type="text_general" indexed="true" stored="true"/>
-   <field name="acquisition_category" type="text_general" indexed="true" stored="true"/>
-   <field name="status" type="text_general" indexed="true" stored="true"/>
-   <field name="segment_indicator" type="text_general" indexed="true" stored="true"/>
-   <field name="surface" type="text_general" indexed="true" stored="true"/>   
-   <field name="carrier_capacity" type="text_general" indexed="true" stored="true"/>
-   <field name="reel_size" type="text_general" indexed="true" stored="true"/>
-   <field name="channels" type="int" indexed="true" stored="true"/>
-   <field name="sound_field" type="text_general" indexed="true" stored="true"/>
-   <field name="speed" type="text_general" indexed="true" stored="true"/>
-   <field name="thickness" type="text_general" indexed="true" stored="true"/>
-   <field name="brand" type="text_general" indexed="true" stored="true"/>
-   <field name="duration" type="int" indexed="true" stored="true"/>
-   <field name="duration_type" type="text_general" indexed="true" stored="true"/>
-   <field name="equalisation" type="text_general" indexed="true" stored="true"/>
-
-   <!-- Copy fields from Tiff extraction: general metadata -->
-   <!-- creator, and creator statement already exist -->
-   <field name="alternative_title" type="text_general" indexed="true" stored="true"/>
-   <field name="heading" type="text_general" indexed="true" stored="true"/>
-
-   <!-- Copy fields from Tiff extraction: IPTC metadata -->
-   <field name="sublocation" type="text_general" indexed="true" stored="ture"/>
-   <field name="city" type="text_general" indexed="true" stored="ture"/>
-   <field name="province" type="text_general" indexed="true" stored="ture"/>
-   <field name="country" type="text_general" indexed="true" stored="ture"/>
-   <field name="iso_country_code" type="text_general" indexed="true" stored="ture"/>
-   <field name="world_region" type="text_general" indexed="true" stored="ture"/>
-   <field name="digital_source_type" type="text_general" indexed="true" stored="ture"/>
-   <field name="event" type="text_general" indexed="true" stored="ture"/>
-
-   <!-- Copy fields from Tiff extraction: GeoCoding metadata -->
-   <field name="gps_version" type="text_general" indexed="true" stored="ture"/>
-   <field name="latitude" type="text_general" indexed="true" stored="ture"/>
-   <field name="longitude" type="text_general" indexed="true" stored="ture"/>
-   <field name="latitude_ref" type="text_general" indexed="true" stored="ture"/>
-   <field name="longitude_ref" type="text_general" indexed="true" stored="ture"/>
-   <field name="map_datum" type="text_general" indexed="true" stored="ture"/>
-   <field name="gps_timestamp" type="date" indexed="true" stored="true"/>
-
-   <!-- Copy fields from Tiff extraction: camera metadata -->
-   <field name="exposure_time" type="text_general" indexed="true" stored="ture"/>
-   <field name="exposure_fnumber" type="text_general" indexed="true" stored="ture"/>
-   <field name="exposure_mode" type="text_general" indexed="true" stored="ture"/>
-   <field name="exposure_program" type="text_general" indexed="true" stored="ture"/>
-   <field name="iso_speed_rating" type="text_general" indexed="true" stored="ture"/>
-   <field name="focal_length" type="text_general" indexed="true" stored="ture"/>
-   <field name="lens" type="text_general" indexed="true" stored="true"/>
-   <field name="metering_mode" type="text_general" indexed="true" stored="true"/>
-   <field name="white_balance" type="text_general" indexed="true" stored="true"/>
-   <field name="file_source" type="text_general" indexed="true" stored="true"/>
-
-   <!-- File fields -->
-   <field name="doss_id" type="long" indexed="true" stored="true"/>
-   <field name="file_name" type="string" indexed="true" stored="true"/>
-   <field name="mime_type" type="string" indexed="true" stored="true"/>
-   <field name="file_format" type="text_general" indexed="true" stored="true"/>
-   <field name="format_version" type="text_general" indexed="true" stored="true"/>
-   <field name="file_size" type="long" indexed="true" stored="true"/>
-   <field name="bit_depth" type="int" indexed="true" stored="true"/>
-   <field name="encoding" type="text_general" indexed="true" stored="true"/>
-   <field name="resolution" type="text_general" indexed="true" stored="true"/>
-   <field name="resolution_unit" type="text_general" indexed="true" stored="true"/>
-   <field name="colour_space" type="text_general" indexed="true" stored="true"/>
-   <field name="orientation" type="text_general" indexed="true" stored="true"/>
-   <field name="image_width" type="int" indexed="true" stored="true"/>
-   <field name="image_length" type="int" indexed="true" stored="true"/>
-   <field name="colour_profile" type="text_general" indexed="true" stored="true"/>
-   <field name="cp_location" type="text_general" indexed="true" stored="true"/>
-   <field name="application" type="text_general" indexed="true" stored="true"/>
-   <field name="application_date_created" type="text_general" indexed="true" stored="true"/>
-   <field name="date_digitised" type="text_general" indexed="true" stored="true"/>
-   <field name="manufacture_make" type="text_general" indexed="true" stored="true"/>
-   <field name="manufacture_model_name" type="text_general" indexed="true" stored="true"/>
-   <field name="manufacture_serial_number" type="text_general" indexed="true" stored="true"/>
-   <field name="block_align" type="int" indexed="true" stored="true"/>
-   <field name="frame_rate" type="int" indexed="true" stored="true"/>
-   <field name="file_container" type="text_general" indexed="true" stored="true"/>
-   <field name="bit_rate" type="int" indexed="true" stored="true"/> <!-- a.k.a: bitDepth -->
-   <field name="codec" type="text_general" indexed="true" stored="true"/>
-   <field name="sampling_rate" type="int" indexed="true" stored="true"/>
-
-   <!-- Other fields -->
+   <field name="holding_number" type="string" indexed="true" stored="true"/>
+   <field name="amber_id" type="long" indexed="true" stored="true"/>  
    <field name="device" type="text_general" indexed="true" stored="true"/>
-   <field name="device_serial_number" type="string" indexed="true" stored="true"/>
    <field name="software" type="text_general" indexed="true" stored="true"/>
-   <field name="software_serial_number" type="string" indexed="true" stored="true"/>
+   <field name="comasters" type="string" indexed="true" stored="true"/>
+   <field name="docworks_project" type="string" indexed="true" stored="true"/>
+   <field name="ready_file" type="string" indexed="true" stored="true"/>	
+   <!-- job files -->
+   <field name="filename" type="text_general" indexed="true" stored="true" />
+   <field name="content_type" type="text_general" indexed="true" stored="true" /> 
+   <field name="file_order" type="long" indexed="true" stored="true" />
+   <field name="job_item_id" type="long" indexed="true" stored="true"/>
+   <field name="copy_role" type="string" indexed="true" stored="true"/>
+   <field name="pi" type="text_general" indexed="true" stored="true"/>
+   <!-- project -->     
+   <field name="parent_id" type="long" indexed="true" stored="true"/>
+   <field name="started" type="date" indexed="true" stored="true"/>
+   <!-- audit fields -->
+   <field name="created_at"  type="date" indexed="true" stored="true"/>
+   <field name="created_by" type="string" indexed="true" stored="true"/>
+   <field name="updated_at"  type="date" indexed="true" stored="true"/>
+   <field name="updated_by" type="string" indexed="true" stored="true"/>   
+   
+   <field name="job_items" type="long" indexed="true" stored="true" multiValued="true"/>
+   <field name="job_files" type="long" indexed="true" stored="true" multiValued="true"/>  
 
    <!-- Main body of document extracted by SolrCell.
         NOTE: This field is not indexed by default, since it is also copied to "text"
         using copyField below. This is to save space. Use this field for returning and
         highlighting document content. Use the "text" field to search the content. -->
-   <field name="content" type="text_general" indexed="false" stored="true" multiValued="true"/>
+   <!--<field name="content" type="text_general" indexed="false" stored="true" multiValued="true"/> -->
 
    <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
-   <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
+  <!-- <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/> -->
 
    <!-- catchall text field that indexes tokens both normally and in reverse for efficient
         leading wildcard queries. -->
-   <field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
+   <!--<field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
 
-   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <field name="_version_" type="long" indexed="true" stored="true"/>-->
 
    <!-- Dynamic fields -->
-   <dynamicField name="*_str" type="string" indexed="true" stored="false"/>
-   <dynamicField name="*_sort" type="lowercase" indexed="true" stored="false"/>
+  <!-- <dynamicField name="*_str" type="string" indexed="true" stored="false"/>
+   <dynamicField name="*_sort" type="lowercase" indexed="true" stored="false"/> -->
 
  </fields>
 
@@ -327,7 +205,7 @@
   <!-- copyField commands copy one field to another at the time a document
         is added to the index.  It's used either to index the same field differently,
         or to add multiple fields to the same field for easier/faster searching.  -->
-  <copyField source="pi" dest="text"/>
+ <!-- <copyField source="pi" dest="text"/>
   <copyField source="bib_id" dest="text"/>
   <copyField source="collection" dest="text"/>
   <copyField source="title" dest="text"/>
@@ -338,15 +216,15 @@
   <copyField source="encoding_level" dest="text"/>
   <copyField source="access_conditions" dest="text"/>
   <copyField source="internal_access_conditions" dest="text"/>
-  <copyField source="subject" dest="text"/>
+  <copyField source="subject" dest="text"/> -->
 
   <!-- Copy fields for facetting -->
-  <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
-  <copyField source="creator" dest="creator_str"/>
+  <!--<copyField source="sub_unit_type" dest="sub_unit_type_str"/>
+  <copyField source="creator" dest="creator_str"/>  -->
 
   <!-- Copy fields for sorting -->
-  <copyField source="title" dest="title_sort"/>
-  <copyField source="creator" dest="creator_sort"/>
+ <!-- <copyField source="title" dest="title_sort"/>
+  <copyField source="creator" dest="creator_sort"/> -->
   
   <types>
     <!-- field type definitions. The "name" attribute is

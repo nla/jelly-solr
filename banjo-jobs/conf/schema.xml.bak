@@ -167,11 +167,7 @@
    <field name="issue_date" type="date" indexed="true" stored="true"/>
    <field name="holding_number" type="text_general" indexed="true" stored="true"/>
    <field name="rights" type="text_general" indexed="true" stored="true"/>
-   <field name="send_to_ilms" type="boolean" indexed="true" stored="true"/>
-   <field name="more_ilms_details_required" type="boolean" indexed="true" stored="true"/>
-   <field name="ilms_sent_date_time" type="date" indexed="true" stored="true"/>
-   <field name="sensitive_material" type="string" indexed="true" stored="true"/>
-   <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
+
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
 
@@ -248,7 +244,7 @@
    <!-- File fields -->
    <field name="doss_id" type="long" indexed="true" stored="true"/>
    <field name="file_name" type="string" indexed="true" stored="true"/>
-   <field name="mime_type" type="string" indexed="true" stored="true"/>
+   <field name="mime_type" type="text_general" indexed="true" stored="true"/>
    <field name="file_format" type="text_general" indexed="true" stored="true"/>
    <field name="format_version" type="text_general" indexed="true" stored="true"/>
    <field name="file_size" type="long" indexed="true" stored="true"/>
