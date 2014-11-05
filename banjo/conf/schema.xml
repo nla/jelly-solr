@@ -174,11 +174,11 @@
    <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="repository" type="string" indexed="false" stored="true"/>
+   <field name="repository" type="string" indexed="true" stored="true"/>
    <field name="collection_number" type="string" indexed="true" stored="true"/>
    <field name="scope_n_content" type="text_general" indexed="true" stored="true"/>
    <field name="component_level" type="string" indexed="true" stored="true"/>
-   <field name="component_number" type="string" indexed="false" stored="true"/>
+   <field name="component_number" type="string" indexed="true" stored="true"/>
    <field name="container" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="rds_ack_type" type="text_general" indexed="true" stored="true"/>
    <field name="rds_ack_receiver" type="text_general" indexed="true" stored="true"/>
