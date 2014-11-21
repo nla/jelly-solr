@@ -172,17 +172,17 @@
 
    <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
-  <!-- <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/> -->
+  <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
 
    <!-- catchall text field that indexes tokens both normally and in reverse for efficient
         leading wildcard queries. -->
-   <!--<field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
+   <field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
 
-   <field name="_version_" type="long" indexed="true" stored="true"/>-->
+   <!--<field name="_version_" type="long" indexed="true" stored="true"/>-->
 
    <!-- Dynamic fields -->
-  <!-- <dynamicField name="*_str" type="string" indexed="true" stored="false"/>
-   <dynamicField name="*_sort" type="lowercase" indexed="true" stored="false"/> -->
+   <dynamicField name="*_str" type="string" indexed="true" stored="false"/>
+   <dynamicField name="*_sort" type="lowercase" indexed="true" stored="false"/> 
 
  </fields>
 
@@ -210,18 +210,21 @@
   <!-- copyField commands copy one field to another at the time a document
         is added to the index.  It's used either to index the same field differently,
         or to add multiple fields to the same field for easier/faster searching.  -->
- <!-- <copyField source="pi" dest="text"/>
-  <copyField source="bib_id" dest="text"/>
+  <copyField source="job_type" dest="text"/>
+  <copyField source="name" dest="text"/>
+  <copyField source="description" dest="text"/>
+  <copyField source="job_id" dest="text"/>
+  <copyField source="project_id" dest="text"/>
+  <copyField source="status" dest="text"/>
   <copyField source="collection" dest="text"/>
-  <copyField source="title" dest="text"/>
-  <copyField source="creator" dest="text"/>
-  <copyField source="dcm_work_pid" dest="text"/>
-  <copyField source="series" dest="text"/>
-  <copyField source="form" dest="text"/>
-  <copyField source="encoding_level" dest="text"/>
-  <copyField source="access_conditions" dest="text"/>
-  <copyField source="internal_access_conditions" dest="text"/>
-  <copyField source="subject" dest="text"/> -->
+  <copyField source="agent" dest="text"/>
+  <copyField source="created_by" dest="text"/>
+  <copyField source="updated_by" dest="text"/>
+  <copyField source="requestor" dest="text"/>
+  <copyField source="assigned_to" dest="text"/>
+  <copyField source="reference_number" dest="text"/>
+  <copyField source="software" dest="text"/>
+  <copyField source="device" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="name" dest="name_str"/>

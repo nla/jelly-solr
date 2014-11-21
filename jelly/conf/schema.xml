@@ -123,6 +123,14 @@
    <field name="ocr_content" type="ocr_type" indexed="true" stored="true"/>
    <field name="ocr_id_box" type="string" indexed="false" stored="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
+   <field name="repository" type="string" indexed="true" stored="true"/>
+   <field name="extent" type="string" indexed="true" stored="true"/>
+   <field name="collection_number" type="string" indexed="true" stored="true"/>
+   <field name="scope_n_content" type="text_general" indexed="true" stored="true"/>
+   <field name="component_level" type="string" indexed="true" stored="true"/>
+   <field name="component_number" type="string" indexed="true" stored="true"/>
+   <field name="local_system_no" type="string" indexed="true" stored="true"/>
+   <field name="container" type="string" indexed="true" stored="true" multiValued="true"/>
 
    <!-- Not used any more -->
    <!--field name="ocr" type="ocr_payloads_type" indexed="true" stored="true"/-->
