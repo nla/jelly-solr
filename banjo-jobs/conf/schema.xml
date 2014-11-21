@@ -132,7 +132,7 @@
    <field name="instructions_to_uploader" type="text_general" indexed="true" stored="true"/>
    <!-- job items -->
    <field name="job_id" type="long" indexed="true" stored="true"/>
-   <field name="bib_id" type="long" indexed="true" stored="true"/>
+   <field name="bib_id" type="string" indexed="true" stored="true"/>
    <field name="collection" type="string" indexed="true" stored="true"/>
    <field name="holding_number" type="string" indexed="true" stored="true"/>
    <field name="amber_id" type="long" indexed="true" stored="true"/>  
