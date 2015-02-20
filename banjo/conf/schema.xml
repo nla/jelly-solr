@@ -181,6 +181,8 @@
    <field name="component_level" type="string" indexed="true" stored="true"/>
    <field name="component_number" type="string" indexed="true" stored="true"/>
    <field name="container" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="physical-container-type" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="physical-container-number" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="rds_ack_type" type="text_general" indexed="true" stored="true"/>
    <field name="rds_ack_receiver" type="text_general" indexed="true" stored="true"/>
    <field name="ead_update_review_required" type="string" indexed="true" stored="true"/>
