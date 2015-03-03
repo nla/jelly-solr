@@ -351,6 +351,7 @@
   <copyField source="access_conditions" dest="text"/>
   <copyField source="internal_access_conditions" dest="text"/>
   <copyField source="subject" dest="text"/>
+  <copyField source="internal_comments" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
