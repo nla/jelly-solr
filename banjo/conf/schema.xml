@@ -116,6 +116,7 @@
    <field name="bib_id" type="string" indexed="true" stored="true"/>
    <field name="collection" type="string" indexed="true" stored="true"/>
    <field name="title" type="text_general" indexed="true" stored="true"/>
+   <field name="uniform_title" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_type" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_no" type="text_general" indexed="true" stored="true"/>
    <field name="first_part" type="string" indexed="true" stored="true"/>
@@ -352,6 +353,79 @@
   <copyField source="internal_access_conditions" dest="text"/>
   <copyField source="subject" dest="text"/>
   <copyField source="internal_comments" dest="text"/>
+
+  <copyField source="uniform_title" dest="text"/>
+<copyField source="bib_level" dest="text"/>
+<copyField source="sub_unit_type" dest="text"/>
+<copyField source="digital_status" dest="text"/>
+<copyField source="immutable" dest="text"/>
+<copyField source="creator_statement" dest="text"/>
+<copyField source="edition" dest="text"/>
+<copyField source="publisher" dest="text"/>
+<copyField source="start_date" dest="text"/>
+<copyField source="end_date" dest="text"/>
+<copyField source="extent" dest="text"/>
+<copyField source="language" dest="text"/>
+<copyField source="digital_status_date" dest="text"/>
+<copyField source="dcm_date_time_created" dest="text"/>
+<copyField source="dcm_record_creator" dest="text"/>
+<copyField source="dcm_date_time_updated" dest="text"/>
+<copyField source="dcm_record_updater" dest="text"/>
+<copyField source="addressee" dest="text"/>
+<copyField source="record_source" dest="text"/>
+<copyField source="encoding_level" dest="text"/>
+<copyField source="genre" dest="text"/>
+<copyField source="publication_category" dest="text"/>
+<copyField source="series" dest="text"/>
+<copyField source="classification" dest="text"/>
+<copyField source="contributor" dest="text"/>
+<copyField source="coverage" dest="text"/>
+<copyField source="occupation" dest="text"/>
+<copyField source="other_title" dest="text"/>
+<copyField source="standard_id" dest="text"/>
+<copyField source="subject" dest="text"/>
+<copyField source="scale_etc" dest="text"/>
+<copyField source="alias_pi" dest="text"/>
+<copyField source="internal_comments" dest="text"/>
+<copyField source="external_comments" dest="text"/>
+<copyField source="access_conditions" dest="text"/>
+<copyField source="expiry_date" dest="text"/>
+<copyField source="constraint" dest="text"/>
+<copyField source="copyright_policy" dest="text"/>
+<copyField source="issue_date" dest="text"/>
+<copyField source="holding_number" dest="text"/>
+<copyField source="physical_container_number" dest="text"/>
+<copyField source="container" dest="text"/>
+<copyField source="material_type" dest="text"/>
+<copyField source="other_no_type" dest="text"/>
+<copyField source="other_no" dest="text"/>
+<copyField source="copy_type" dest="text"/>
+<copyField source="copy_role" dest="text"/>
+<copyField source="carrier" dest="text"/>
+<copyField source="date_created" dest="text"/>
+<copyField source="source_copy" dest="text"/>
+<copyField source="condition" dest="text"/>
+<copyField source="exhibition" dest="text"/>
+<copyField source="acquisition_status" dest="text"/>
+<copyField source="acquisition_category" dest="text"/>
+<copyField source="status" dest="text"/>
+<copyField source="segment_indicator" dest="text"/>
+<copyField source="file_name" dest="text"/>
+<copyField source="mime_type" dest="text"/>
+<copyField source="file_format" dest="text"/>
+<copyField source="device" dest="text"/>
+<copyField source="software" dest="text"/>
+<copyField source="application" dest="text"/>
+<copyField source="manufacture_make" dest="text"/>
+<copyField source="manufacture_model_name" dest="text"/>
+<copyField source="dcm_copy_pid" dest="text"/>
+<copyField source="local_system_no" dest="text"/>
+<copyField source="record_updater" dest="text"/>
+<copyField source="date_time_created" dest="text"/>
+<copyField source="record_creator" dest="text"/>
+<copyField source="date_time_updated" dest="text"/>
+<copyField source="record_updater" dest="text"/>
+<copyField source="rights" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
