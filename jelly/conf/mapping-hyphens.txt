@@ -1,0 +1,8 @@
+# Hyphens and like
+"\u2010" => "-"
+"\u2011" => "-"
+# Not quite hyphens. The space will ensure that they are #  not tokenized with the word following them "\u2012" => "- "
+"\u2013" => "- "
+"\u2014" => "- "
+"\u2015" => "- "
+"\u2212" => "- "

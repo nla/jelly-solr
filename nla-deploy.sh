@@ -14,3 +14,4 @@ unzip -d $1/ROOT solr-$SOLR_VERSION/dist/solr-$SOLR_VERSION.war
 mkdir $1/ROOT/WEB-INF/solr
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
 cp solr-$SOLR_VERSION/example/lib/ext/* $1/ROOT/WEB-INF/lib
+wget --directory-prefix=$1/ROOT/WEB-INF/lib http://dev.nla.gov.au/nexus/service/local/repositories/nla-snapshots/content/au/gov/nla/solr/nlasolr/4.7.2-SNAPSHOT/nlasolr-4.7.2-20150113.231853-33.jar
