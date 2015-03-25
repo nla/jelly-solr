@@ -116,6 +116,7 @@
    <field name="bib_id" type="string" indexed="true" stored="true"/>
    <field name="collection" type="string" indexed="true" stored="true"/>
    <field name="title" type="text_general" indexed="true" stored="true"/>
+   <field name="uniform_title" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_type" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_no" type="text_general" indexed="true" stored="true"/>
    <field name="first_part" type="string" indexed="true" stored="true"/>
@@ -352,6 +353,7 @@
   <copyField source="internal_access_conditions" dest="text"/>
   <copyField source="subject" dest="text"/>
   <copyField source="internal_comments" dest="text"/>
+  <copyField source="uniform_title" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
