@@ -16,3 +16,5 @@ cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
 cp solr-$SOLR_VERSION/example/lib/ext/* $1/ROOT/WEB-INF/lib
 wget --directory-prefix=$1/ROOT/WEB-INF/lib http://dev.nla.gov.au/nexus/service/local/repositories/nla-snapshots/content/au/gov/nla/solr/nlasolr/4.7.2-SNAPSHOT/nlasolr-4.7.2-20150113.231853-33.jar
 wget --directory-prefix=$1/ROOT/WEB-INF/lib http://dev.nla.gov.au/nexus/content/repositories/nla/org/apache/lucene/lucene-analyzers-icu/4.7.2.NLA.mm-patched/lucene-analyzers-icu-4.7.2.NLA.mm-patched.jar
+wget --directory-prefix=$1/ROOT/WEB-INF/lib http://dev.nla.gov.au/nexus/content/repositories/nla/org/apache/lucene/lucene-analyzers-stempel/4.7.2.NLA.mm-patched/lucene-analyzers-stempel-4.7.2.NLA.mm-patched.jar
+wget --directory-prefix=$1/ROOT/WEB-INF/lib http://dev.nla.gov.au/nexus/service/local/repositories/all/com/ibm/icu/icu4j/49.1/icu4j-49.1.jar
