@@ -219,7 +219,8 @@
    <field name="speed" type="text_general" indexed="true" stored="true"/>
    <field name="thickness" type="text_general" indexed="true" stored="true"/>
    <field name="brand" type="text_general" indexed="true" stored="true"/>
-   <field name="duration" type="int" indexed="true" stored="true"/>
+   <field name="duration_seconds" type="long indexed="true" stored="true"/>
+   <field name="duration_minutes" type="long indexed="true" stored="true"/>^M
    <field name="duration_type" type="text_general" indexed="true" stored="true"/>
    <field name="equalisation" type="text_general" indexed="true" stored="true"/>
 
