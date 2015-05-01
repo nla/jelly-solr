@@ -731,12 +731,10 @@
     
       <fieldtype name="flatten_multiple" stored="true" sortMissingLast="true" omitNorms="true" indexed="true" class="solr.TextField" >
       <analyzer type="index">
-        <tokenizer class="solr.KeywordTokenizerFactory"/>
        <tokenizer class="solr.PatternTokenizerFactory" pattern="\|\s*" />
        <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
       <analyzer type="query">
-        <tokenizer class="solr.KeywordTokenizerFactory"/>
          <tokenizer class="solr.PatternTokenizerFactory" pattern="\|\s*" />
         <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
