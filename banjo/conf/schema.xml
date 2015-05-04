@@ -149,7 +149,7 @@
    <field name="genre" type="text_general" indexed="true" stored="true"/>
    <field name="publication_category" type="text_general" indexed="true" stored="true"/>
    <field name="series" type="text_general" indexed="true" stored="true" multiValued="true"/>
-    <field name="series_group" type="flatten_multiple" indexed="true" stored="true" multiValued="true"/>
+    <field name="series_group" type="flatten_multiple" indexed="true" stored="true"/>
    <field name="classification" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="contributor" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="contributor_group" type="flatten_multiple" indexed="true" stored="true"/>
@@ -731,7 +731,7 @@
     
       <fieldtype name="flatten_multiple" stored="true" sortMissingLast="true" omitNorms="true" indexed="true" class="solr.TextField" >
       <analyzer type="index">
-       <tokenizer class="solr.PatternTokenizerFactory" pattern="\|\s*" />
+       <tokenizer class="solr.PatternTokenizerFactory" pattern="/|/g" />
        <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
       <analyzer type="query">
