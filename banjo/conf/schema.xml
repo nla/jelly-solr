@@ -125,6 +125,7 @@
    <field name="bib_level" type="string" indexed="true" stored="true"/>
    <field name="digital_status" type="string" indexed="true" stored="true"/>
    <field name="creator" type="text_general" indexed="true" stored="true"/>
+   <field name="creator_group" type="string" indexed="true" stored="true"/>
    <field name="creator_statement" type="text_general" indexed="true" stored="true"/>
    <field name="edition" type="text_general" indexed="true" stored="true"/>
    <field name="publisher" type="text_general" indexed="true" stored="true"/>
@@ -148,8 +149,10 @@
    <field name="genre" type="text_general" indexed="true" stored="true"/>
    <field name="publication_category" type="text_general" indexed="true" stored="true"/>
    <field name="series" type="text_general" indexed="true" stored="true" multiValued="true"/>
+    <field name="series_group" type="flatten_multiple" indexed="true" stored="true"/>
    <field name="classification" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="contributor" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="contributor_group" type="flatten_multiple" indexed="true" stored="true"/>
    <field name="coverage" type="text_general" indexed="true" stored="true"/>
    <field name="occupation" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="other_title" type="text_general" indexed="true" stored="true" multiValued="true"/>
@@ -177,6 +180,7 @@
    <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="parent_levels" type="int" indexed="true" stored="true"/>
    <field name="repository" type="string" indexed="true" stored="true"/>
    <field name="collection_number" type="string" indexed="true" stored="true"/>
    <field name="scope_n_content" type="text_general" indexed="true" stored="true"/>
@@ -203,6 +207,7 @@
    <field name="copy_type" type="string" indexed="true" stored="true"/>
    <field name="copy_role" type="string" indexed="true" stored="true"/>
    <field name="carrier" type="text_general" indexed="true" stored="true"/>
+   <field name="carrier_group" type="string" indexed="true" stored="true"/>
    <field name="date_created" type="date" indexed="true" stored="true"/>
    <field name="source_copy" type="string" indexed="true" stored="true"/>
    <field name="condition" type="text_general" indexed="true" stored="true"/>
@@ -379,8 +384,10 @@
 <copyField source="genre" dest="text"/>
 <copyField source="publication_category" dest="text"/>
 <copyField source="series" dest="text"/>
+<copyField source="series_group" dest="text"/>
 <copyField source="classification" dest="text"/>
 <copyField source="contributor" dest="text"/>
+<copyField source="contributor_group" dest="text"/>
 <copyField source="coverage" dest="text"/>
 <copyField source="occupation" dest="text"/>
 <copyField source="other_title" dest="text"/>
@@ -721,6 +728,17 @@
         <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
     </fieldType>
+    
+    <fieldtype name="flatten_multiple"  class="solr.TextField" >
+      <analyzer type="index">
+       <tokenizer class="solr.PatternTokenizerFactory" pattern="([^\|]+)" group="1" />
+      </analyzer>
+      <analyzer type="query">
+         <tokenizer class="solr.PatternTokenizerFactory" pattern="([^\|]+)"  group="1" />
+    </analyzer>
+    </fieldtype>
+    
+ 
 
     <!-- charFilter + WhitespaceTokenizer  -->
     <!--
