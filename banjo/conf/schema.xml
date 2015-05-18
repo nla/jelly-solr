@@ -729,7 +729,7 @@
       </analyzer>
     </fieldType>
     
-      <fieldtype name="flatten_multiple" stored="true" sortMissingLast="true" omitNorms="true" indexed="true" class="solr.TextField" >
+      <fieldtype name="flatten_multiple"  class="solr.TextField" >
       <analyzer type="index">
        <tokenizer class="solr.PatternTokenizerFactory" pattern="([^\|]*)" group="1" />
       </analyzer>
