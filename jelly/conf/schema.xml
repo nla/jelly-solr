@@ -564,8 +564,14 @@
     <!-- NN - 20130815 -->
     <fieldType name="ocr_type" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
-        <tokenizer class="solr.StandardTokenizerFactory"/>
-        <!-- Case insensitive stop word removal.
+        <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-hyphens.txt" />
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+	<filter class="au.gov.nla.lucene.analysis.TermTypeFilterFactory" />
+        <filter class="au.gov.nla.lucene.analysis.WordDelimiterFilterFactory" splitOnCaseChange="1" generateWordParts="1" catenateWords="0" splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1" catenateAll="1" catenateShingles="1" preserveOriginal="0" stemEnglishPossessive="1"/>
+	<filter class="solr.ICUFoldingFilterFactory"/>
+	<filter class="solr.EnglishPossessiveFilterFactory"/>
+        <filter class="solr.CJKBigramFilterFactory" outputUnigrams="true"/>        
+	<!-- Case insensitive stop word removal.
           add enablePositionIncrements=true in both the index and query
           analyzers to leave a 'gap' for more accurate phrase queries.
         -->
@@ -579,8 +585,14 @@
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
       <analyzer type="query">
-        <tokenizer class="solr.StandardTokenizerFactory"/>
-        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+	<charFilter class="solr.MappingCharFilterFactory" mapping="mapping-hyphens.txt" />
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="au.gov.nla.lucene.analysis.TermTypeFilterFactory" />
+        <filter class="au.gov.nla.lucene.analysis.WordDelimiterFilterFactory" splitOnCaseChange="1" generateWordParts="1" catenateWords="0" splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1" catenateAll="1" catenateShingles="1" preserveOriginal="0" stemEnglishPossessive="1"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+	<filter class="solr.EnglishPossessiveFilterFactory"/>
+        <filter class="solr.CJKBigramFilterFactory" outputUnigrams="true"/>
+	<filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
         <!--filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" enablePositionIncrements="true"/-->
         <filter class="solr.CommonGramsFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt"/>
         <filter class="solr.LowerCaseFilterFactory"/>

@@ -125,6 +125,7 @@
    <field name="bib_level" type="string" indexed="true" stored="true"/>
    <field name="digital_status" type="string" indexed="true" stored="true"/>
    <field name="creator" type="text_general" indexed="true" stored="true"/>
+   <field name="creator_group" type="string" indexed="true" stored="true"/>
    <field name="creator_statement" type="text_general" indexed="true" stored="true"/>
    <field name="edition" type="text_general" indexed="true" stored="true"/>
    <field name="publisher" type="text_general" indexed="true" stored="true"/>
@@ -148,8 +149,10 @@
    <field name="genre" type="text_general" indexed="true" stored="true"/>
    <field name="publication_category" type="text_general" indexed="true" stored="true"/>
    <field name="series" type="text_general" indexed="true" stored="true" multiValued="true"/>
+    <field name="series_group" type="flatten_multiple" indexed="true" stored="true"/>
    <field name="classification" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="contributor" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="contributor_group" type="flatten_multiple" indexed="true" stored="true"/>
    <field name="coverage" type="text_general" indexed="true" stored="true"/>
    <field name="occupation" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="other_title" type="text_general" indexed="true" stored="true" multiValued="true"/>
@@ -163,6 +166,7 @@
    <field name="access_conditions" type="string" indexed="true" stored="true"/>
    <field name="internal_access_conditions" type="string" indexed="true" stored="true"/>
    <field name="allow_highres_download" type="boolean" indexed="true" stored="true"/>
+   <field name="ingest_locked" type="boolean" indexed="true" stored="true"/>
    <field name="expiry_date" type="int" indexed="true" stored="true"/>
    <field name="constraint" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
@@ -176,6 +180,7 @@
    <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="parent_levels" type="int" indexed="true" stored="true"/>
    <field name="repository" type="string" indexed="true" stored="true"/>
    <field name="collection_number" type="string" indexed="true" stored="true"/>
    <field name="scope_n_content" type="text_general" indexed="true" stored="true"/>
@@ -202,6 +207,7 @@
    <field name="copy_type" type="string" indexed="true" stored="true"/>
    <field name="copy_role" type="string" indexed="true" stored="true"/>
    <field name="carrier" type="text_general" indexed="true" stored="true"/>
+   <field name="carrier_group" type="string" indexed="true" stored="true"/>
    <field name="date_created" type="date" indexed="true" stored="true"/>
    <field name="source_copy" type="string" indexed="true" stored="true"/>
    <field name="condition" type="text_general" indexed="true" stored="true"/>
@@ -218,7 +224,8 @@
    <field name="speed" type="text_general" indexed="true" stored="true"/>
    <field name="thickness" type="text_general" indexed="true" stored="true"/>
    <field name="brand" type="text_general" indexed="true" stored="true"/>
-   <field name="duration" type="int" indexed="true" stored="true"/>
+   <field name="duration_seconds" type="long" indexed="true" stored="true"/>
+   <field name="duration_minutes" type="long" indexed="true" stored="true"/>
    <field name="duration_type" type="text_general" indexed="true" stored="true"/>
    <field name="equalisation" type="text_general" indexed="true" stored="true"/>
 
@@ -353,7 +360,81 @@
   <copyField source="internal_access_conditions" dest="text"/>
   <copyField source="subject" dest="text"/>
   <copyField source="internal_comments" dest="text"/>
+
   <copyField source="uniform_title" dest="text"/>
+<copyField source="bib_level" dest="text"/>
+<copyField source="sub_unit_type" dest="text"/>
+<copyField source="digital_status" dest="text"/>
+<copyField source="immutable" dest="text"/>
+<copyField source="creator_statement" dest="text"/>
+<copyField source="edition" dest="text"/>
+<copyField source="publisher" dest="text"/>
+<copyField source="start_date" dest="text"/>
+<copyField source="end_date" dest="text"/>
+<copyField source="extent" dest="text"/>
+<copyField source="language" dest="text"/>
+<copyField source="digital_status_date" dest="text"/>
+<copyField source="dcm_date_time_created" dest="text"/>
+<copyField source="dcm_record_creator" dest="text"/>
+<copyField source="dcm_date_time_updated" dest="text"/>
+<copyField source="dcm_record_updater" dest="text"/>
+<copyField source="addressee" dest="text"/>
+<copyField source="record_source" dest="text"/>
+<copyField source="encoding_level" dest="text"/>
+<copyField source="genre" dest="text"/>
+<copyField source="publication_category" dest="text"/>
+<copyField source="series" dest="text"/>
+<copyField source="series_group" dest="text"/>
+<copyField source="classification" dest="text"/>
+<copyField source="contributor" dest="text"/>
+<copyField source="contributor_group" dest="text"/>
+<copyField source="coverage" dest="text"/>
+<copyField source="occupation" dest="text"/>
+<copyField source="other_title" dest="text"/>
+<copyField source="standard_id" dest="text"/>
+<copyField source="subject" dest="text"/>
+<copyField source="scale_etc" dest="text"/>
+<copyField source="alias_pi" dest="text"/>
+<copyField source="internal_comments" dest="text"/>
+<copyField source="external_comments" dest="text"/>
+<copyField source="access_conditions" dest="text"/>
+<copyField source="expiry_date" dest="text"/>
+<copyField source="constraint" dest="text"/>
+<copyField source="copyright_policy" dest="text"/>
+<copyField source="issue_date" dest="text"/>
+<copyField source="holding_number" dest="text"/>
+<copyField source="physical_container_number" dest="text"/>
+<copyField source="container" dest="text"/>
+<copyField source="material_type" dest="text"/>
+<copyField source="other_no_type" dest="text"/>
+<copyField source="other_no" dest="text"/>
+<copyField source="copy_type" dest="text"/>
+<copyField source="copy_role" dest="text"/>
+<copyField source="carrier" dest="text"/>
+<copyField source="date_created" dest="text"/>
+<copyField source="source_copy" dest="text"/>
+<copyField source="condition" dest="text"/>
+<copyField source="exhibition" dest="text"/>
+<copyField source="acquisition_status" dest="text"/>
+<copyField source="acquisition_category" dest="text"/>
+<copyField source="status" dest="text"/>
+<copyField source="segment_indicator" dest="text"/>
+<copyField source="file_name" dest="text"/>
+<copyField source="mime_type" dest="text"/>
+<copyField source="file_format" dest="text"/>
+<copyField source="device" dest="text"/>
+<copyField source="software" dest="text"/>
+<copyField source="application" dest="text"/>
+<copyField source="manufacture_make" dest="text"/>
+<copyField source="manufacture_model_name" dest="text"/>
+<copyField source="dcm_copy_pid" dest="text"/>
+<copyField source="local_system_no" dest="text"/>
+<copyField source="record_updater" dest="text"/>
+<copyField source="date_time_created" dest="text"/>
+<copyField source="record_creator" dest="text"/>
+<copyField source="date_time_updated" dest="text"/>
+<copyField source="record_updater" dest="text"/>
+<copyField source="rights" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
@@ -647,6 +728,17 @@
         <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
     </fieldType>
+    
+    <fieldtype name="flatten_multiple"  class="solr.TextField" >
+      <analyzer type="index">
+       <tokenizer class="solr.PatternTokenizerFactory" pattern="([^\|]+)" group="1" />
+      </analyzer>
+      <analyzer type="query">
+         <tokenizer class="solr.PatternTokenizerFactory" pattern="([^\|]+)"  group="1" />
+    </analyzer>
+    </fieldtype>
+    
+ 
 
     <!-- charFilter + WhitespaceTokenizer  -->
     <!--
