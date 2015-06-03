@@ -161,6 +161,7 @@
    <field name="scale_etc" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="dcm_work_pid" type="string" indexed="true" stored="true"/>
    <field name="alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="alias_sort" type="string" indexed="true" stored="true"/>
    <field name="internal_comments" type="text_general" indexed="true" stored="true"/>
    <field name="external_comments" type="text_general" indexed="true" stored="true"/>
    <field name="access_conditions" type="string" indexed="true" stored="true"/>
