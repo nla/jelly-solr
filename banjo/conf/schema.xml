@@ -209,6 +209,7 @@
    <field name="copy_type" type="string" indexed="true" stored="true"/>
    <field name="copy_role" type="string" indexed="true" stored="true"/>
    <field name="carrier" type="text_general" indexed="true" stored="true"/>
+   <field name="algorithm" type="text_general" indexed="true" stored="true"/>   
    <field name="carrier_group" type="string" indexed="true" stored="true"/>
    <field name="date_created" type="date" indexed="true" stored="true"/>
    <field name="source_copy" type="string" indexed="true" stored="true"/>
@@ -413,6 +414,7 @@
 <copyField source="copy_type" dest="text"/>
 <copyField source="copy_role" dest="text"/>
 <copyField source="carrier" dest="text"/>
+<copyField source="algorithm" dest="text"/>
 <copyField source="date_created" dest="text"/>
 <copyField source="source_copy" dest="text"/>
 <copyField source="condition" dest="text"/>
