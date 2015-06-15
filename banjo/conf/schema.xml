@@ -159,6 +159,8 @@
    <field name="standard_id" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="subject" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="scale_etc" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="restrictions_on_access" type="text_general" indexed="true" stored="true" multiValued="true"/>^M
+   <field name="finding_aid_note" type="text_general" indexed="true" stored="true"/>^M
    <field name="dcm_work_pid" type="string" indexed="true" stored="true"/>
    <field name="alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="alias_sort" type="string" indexed="true" stored="true"/>
