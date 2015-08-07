@@ -453,7 +453,8 @@
   <!-- Copy fields for sorting -->
   <copyField source="title" dest="title_sort"/>
   <copyField source="creator" dest="creator_sort"/>
-  
+  <copyField source="parent_pi" dest="parent_pi_sort"/>
+ 
   <types>
     <!-- field type definitions. The "name" attribute is
        just a label to be used by field definitions.  The "class"
