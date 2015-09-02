@@ -198,8 +198,8 @@
    <field name="rds_ack_type" type="text_general" indexed="true" stored="true"/>
    <field name="rds_ack_receiver" type="text_general" indexed="true" stored="true"/>
    <field name="ead_update_review_required" type="string" indexed="true" stored="true"/>
-   <field name="delivery_work" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="delivery_work_parent_pi" type="string" indexed="true" stored="true" />
+   <field name="delivery_work_parent_pi" type="string" indexed="true" stored="true" multiValued="true" />
+   <field name="material_from_multiple_sources" type="boolean" indexed="true" stored="true" />
    <field name="is_missing_page" type="boolean" indexed="true" stored="true"/>
 
    <!-- Copy fields -->
