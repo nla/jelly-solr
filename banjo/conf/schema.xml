@@ -202,7 +202,9 @@
    <field name="delivery_work_parent_pi" type="string" indexed="true" stored="true" multiValued="true" />
    <field name="material_from_multiple_sources" type="boolean" indexed="true" stored="true" />
    <field name="is_missing_page" type="boolean" indexed="true" stored="true"/>
-
+   <field name="acknowledgement_party" type="string" indexed="true" stored="true"/>
+   <field name="acknowledgement_type" type="string" indexed="true" stored="true"/>
+   
    <!-- Copy fields -->
    <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
         dcm_date_time_created, dcm_record_creator, dcm_date_time_updated, dcm_record_updater,
@@ -448,6 +450,8 @@
 <copyField source="date_time_updated" dest="text"/>
 <copyField source="record_updater" dest="text"/>
 <copyField source="rights" dest="text"/>
+<copyField source="acknowledgement_party" dest="text"/>
+<copyField source="acknowledgement_type" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
