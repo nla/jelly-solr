@@ -202,8 +202,8 @@
    <field name="delivery_work_parent_pi" type="string" indexed="true" stored="true" multiValued="true" />
    <field name="material_from_multiple_sources" type="boolean" indexed="true" stored="true" />
    <field name="is_missing_page" type="boolean" indexed="true" stored="true"/>
-   <field name="acknowledgement_party" type="string" indexed="true" stored="true"/>
-   <field name="acknowledgement_type" type="string" indexed="true" stored="true"/>
+   <field name="acknowledgement_party" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="acknowledgement_type" type="string" indexed="true" stored="true" multiValued="true"/>
    
    <!-- Copy fields -->
    <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
