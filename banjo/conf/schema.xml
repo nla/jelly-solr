@@ -205,7 +205,10 @@
    <field name="acknowledgement_party" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="acknowledgement_type" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="work_created_during_migration" type="boolean" indexed="true" stored="true"/>
-   
+   <field name="additional_series_statement" type="text_general" indexed="true" stored="true"/>
+   <field name="sheet_name" type="text_general" indexed="true" stored="true"/>
+   <field name="sheet_creation_date" type="int" indexed="true" stored="true"/>
+
    <!-- Copy fields -->
    <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
         dcm_date_time_created, dcm_record_creator, dcm_date_time_updated, dcm_record_updater,
