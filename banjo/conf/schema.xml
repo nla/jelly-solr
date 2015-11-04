@@ -218,6 +218,7 @@
    <field name="work_id" type="long" indexed="true" stored="true"/>
    <field name="work_pi" type="string" indexed="true" stored="true"/>
    <field name="work_alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="work_alias_sort" type="string" indexed="true" stored="true"/>
    <field name="dcm_copy_pid" type="string" indexed="true" stored="true"/>
    <field name="material_type" type="text_general" indexed="true" stored="true"/>
    <field name="other_no_type" type="text_general" indexed="true" stored="true"/>
