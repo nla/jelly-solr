@@ -112,15 +112,15 @@
    <field name="id" type="long" indexed="true" stored="true" required="true" /> 
    <field name="pi" type="string" indexed="true" stored="true"/>
    <field name="type" type="string" indexed="true" stored="true"/>
-   <field name="sub_type" type="string" indexed="true" stored="true"/>
+   <field name="sub_type" type="text_general" indexed="true" stored="true"/>
    <field name="bib_id" type="string" indexed="true" stored="true"/>
-   <field name="collection" type="string" indexed="true" stored="true"/>
+   <field name="collection" type="text_general" indexed="true" stored="true"/>
    <field name="title" type="text_general" indexed="true" stored="true"/>
    <field name="uniform_title" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_type" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_no" type="text_general" indexed="true" stored="true"/>
    <field name="first_part" type="string" indexed="true" stored="true"/>
-   <field name="immutable" type="string" indexed="true" stored="true"/>
+   <field name="immutable" type="text_general" indexed="true" stored="true"/>
    <field name="form" type="string" indexed="true" stored="true"/>
    <field name="bib_level" type="string" indexed="true" stored="true"/>
    <field name="digital_status" type="string" indexed="true" stored="true"/>
