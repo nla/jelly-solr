@@ -110,20 +110,20 @@
 
    <!-- Work and copy fields -->
    <field name="id" type="long" indexed="true" stored="true" required="true" /> 
-   <field name="pi" type="string" indexed="true" stored="true"/>
+   <field name="pi" type="text_general" indexed="true" stored="true"/>
    <field name="type" type="string" indexed="true" stored="true"/>
-   <field name="sub_type" type="string" indexed="true" stored="true"/>
+   <field name="sub_type" type="text_general" indexed="true" stored="true"/>
    <field name="bib_id" type="string" indexed="true" stored="true"/>
-   <field name="collection" type="string" indexed="true" stored="true"/>
+   <field name="collection" type="text_general" indexed="true" stored="true"/>
    <field name="title" type="text_general" indexed="true" stored="true"/>
    <field name="uniform_title" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_type" type="text_general" indexed="true" stored="true"/>
    <field name="sub_unit_no" type="text_general" indexed="true" stored="true"/>
    <field name="first_part" type="string" indexed="true" stored="true"/>
-   <field name="immutable" type="string" indexed="true" stored="true"/>
-   <field name="form" type="string" indexed="true" stored="true"/>
-   <field name="bib_level" type="string" indexed="true" stored="true"/>
-   <field name="digital_status" type="string" indexed="true" stored="true"/>
+   <field name="immutable" type="text_general" indexed="true" stored="true"/>
+   <field name="form" type="text_general" indexed="true" stored="true"/>
+   <field name="bib_level" type="text_general" indexed="true" stored="true"/>
+   <field name="digital_status" type="text_general" indexed="true" stored="true"/>
    <field name="creator" type="text_general" indexed="true" stored="true"/>
    <field name="creator_group" type="string" indexed="true" stored="true"/>
    <field name="creator_statement" type="text_general" indexed="true" stored="true"/>
@@ -134,17 +134,17 @@
    <field name="extent" type="text_general" indexed="true" stored="true"/>
    <field name="language" type="text_general" indexed="true" stored="true"/>
    <field name="dcm_date_time_created" type="date" indexed="true" stored="true"/>
-   <field name="dcm_record_creator" type="string" indexed="true" stored="true"/>
+   <field name="dcm_record_creator" type="text_general" indexed="true" stored="true"/>
    <field name="dcm_date_time_updated" type="date" indexed="true" stored="true"/>
-   <field name="dcm_record_updater" type="string" indexed="true" stored="true"/>
+   <field name="dcm_record_updater" type="text_general" indexed="true" stored="true"/>
    <field name="date_time_created" type="date" indexed="true" stored="true"/>
-   <field name="record_creator" type="string" indexed="true" stored="true"/>	
+   <field name="record_creator" type="text_general" indexed="true" stored="true"/>	
    <field name="date_time_updated" type="date" indexed="true" stored="true" />
-   <field name="record_updater" type="string" indexed="true" stored="true" />
+   <field name="record_updater" type="text_general" indexed="true" stored="true" />
    <field name="digital_status_date" type="date" indexed="true" stored="true"/>
    <field name="addressee" type="text_general" indexed="true" stored="true"/>
-   <field name="record_source" type="string" indexed="true" stored="true"/>
-   <field name="local_system_no" type="string" indexed="true" stored="true"/>
+   <field name="record_source" type="text_general" indexed="true" stored="true"/>
+   <field name="local_system_no" type="text_general" indexed="true" stored="true"/>
    <field name="encoding_level" type="text_general" indexed="true" stored="true"/>
    <field name="genre" type="text_general" indexed="true" stored="true"/>
    <field name="publication_category" type="text_general" indexed="true" stored="true"/>
@@ -162,13 +162,13 @@
    <field name="restrictions_on_access" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="finding_aid_note" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="event_note" type="text_general" indexed="true" stored="true" multiValued="true"/>
-   <field name="dcm_work_pid" type="string" indexed="true" stored="true"/>
+   <field name="dcm_work_pid" type="text_general" indexed="true" stored="true"/>
    <field name="alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="alias_sort" type="string" indexed="true" stored="true"/>
    <field name="internal_comments" type="text_general" indexed="true" stored="true"/>
    <field name="external_comments" type="text_general" indexed="true" stored="true"/>
-   <field name="access_conditions" type="string" indexed="true" stored="true"/>
-   <field name="internal_access_conditions" type="string" indexed="true" stored="true"/>
+   <field name="access_conditions" type="text_general" indexed="true" stored="true"/>
+   <field name="internal_access_conditions" type="text_general" indexed="true" stored="true"/>
    <field name="allow_highres_download" type="boolean" indexed="true" stored="true"/>
    <field name="ingest_locked" type="boolean" indexed="true" stored="true"/>
    <field name="ingest_job_id" type="long" indexed="true" stored="true"/>
@@ -184,27 +184,27 @@
    <field name="interactive_index_available" type="boolean" indexed="true" stored="true"/>
    <field name="manipulation" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="ilms_sent_date_time" type="date" indexed="true" stored="true"/>
-   <field name="sensitive_material" type="string" indexed="true" stored="true"/>
+   <field name="sensitive_material" type="text_general" indexed="true" stored="true"/>
    <field name="sensitive_reason" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_id" type="long" indexed="true" stored="true" multiValued="true"/>
-   <field name="parent_pi" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="parent_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="parent_levels" type="int" indexed="true" stored="true"/>
    <field name="repository" type="string" indexed="true" stored="true"/>
    <field name="collection_number" type="string" indexed="true" stored="true"/>
    <field name="scope_n_content" type="text_general" indexed="true" stored="true"/>
    <field name="component_level" type="string" indexed="true" stored="true"/>
    <field name="component_number" type="string" indexed="true" stored="true"/>
-   <field name="container" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="physical_container_type" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="physical_container_number" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="container" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="physical_container_type" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="physical_container_number" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="rds_ack_type" type="text_general" indexed="true" stored="true"/>
    <field name="rds_ack_receiver" type="text_general" indexed="true" stored="true"/>
-   <field name="ead_update_review_required" type="string" indexed="true" stored="true"/>
-   <field name="delivery_work_parent_pi" type="string" indexed="true" stored="true" multiValued="true" />
+   <field name="ead_update_review_required" type="text_general" indexed="true" stored="true"/>
+   <field name="delivery_work_parent_pi" type="text_general" indexed="true" stored="true" multiValued="true" />
    <field name="material_from_multiple_sources" type="boolean" indexed="true" stored="true" />
    <field name="is_missing_page" type="boolean" indexed="true" stored="true"/>
-   <field name="acknowledgement_party" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="acknowledgement_type" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="acknowledgement_party" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="acknowledgement_type" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="work_created_during_migration" type="boolean" indexed="true" stored="true"/>
    <field name="additional_series_statement" type="text_general" indexed="true" stored="true"/>
    <field name="sheet_name" type="text_general" indexed="true" stored="true"/>
@@ -218,31 +218,31 @@
         date_time_created, record_creator, date_time_updated, record_updater: same as work -->
    <!-- link copy to work -->
    <field name="work_id" type="long" indexed="true" stored="true"/>
-   <field name="work_pi" type="string" indexed="true" stored="true"/>
+   <field name="work_pi" type="text_general" indexed="true" stored="true"/>
    <field name="work_alias_pi" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="work_alias_sort" type="string" indexed="true" stored="true"/>
-   <field name="dcm_copy_pid" type="string" indexed="true" stored="true"/>
+   <field name="dcm_copy_pid" type="text_general" indexed="true" stored="true"/>
    <field name="material_type" type="text_general" indexed="true" stored="true"/>
    <field name="other_no_type" type="text_general" indexed="true" stored="true"/>
    <field name="other_no" type="text_general" indexed="true" stored="true"/>
-   <field name="copy_type" type="string" indexed="true" stored="true"/>
-   <field name="copy_role" type="string" indexed="true" stored="true"/>
+   <field name="copy_type" type="text_general" indexed="true" stored="true"/>
+   <field name="copy_role" type="text_general" indexed="true" stored="true"/>
    <field name="copy_index" type="int" indexed="true" stored="true"/>
-   <field name="carrier" type="string" indexed="true" stored="true"/>
+   <field name="carrier" type="text_general" indexed="true" stored="true"/>
    <field name="algorithm" type="text_general" indexed="true" stored="true"/>   
    <field name="carrier_group" type="string" indexed="true" stored="true"/>
    <field name="date_created" type="date" indexed="true" stored="true"/>
-   <field name="source_copy" type="string" indexed="true" stored="true"/>
+   <field name="source_copy" type="text_general" indexed="true" stored="true"/>
    <field name="condition" type="text_general" indexed="true" stored="true"/>
    <field name="exhibition" type="text_general" indexed="true" stored="true"/>
    <field name="acquisition_status" type="text_general" indexed="true" stored="true"/>
    <field name="acquisition_category" type="text_general" indexed="true" stored="true"/>
    <field name="status" type="text_general" indexed="true" stored="true"/>
-   <field name="segment_indicator" type="string" indexed="true" stored="true"/>
+   <field name="segment_indicator" type="text_general" indexed="true" stored="true"/>
    <field name="surface" type="text_general" indexed="true" stored="true"/>   
    <field name="carrier_capacity" type="text_general" indexed="true" stored="true"/>
    <field name="reel_size" type="text_general" indexed="true" stored="true"/>
-   <field name="channels" type="string" indexed="true" stored="true"/>
+   <field name="channels" type="text_general" indexed="true" stored="true"/>
    <field name="sound_field" type="text_general" indexed="true" stored="true"/>
    <field name="speed" type="text_general" indexed="true" stored="true"/>
    <field name="thickness" type="text_general" indexed="true" stored="true"/>
@@ -290,8 +290,8 @@
 
    <!-- File fields -->
    <field name="doss_id" type="long" indexed="true" stored="true"/>
-   <field name="file_name" type="string" indexed="true" stored="true"/>
-   <field name="mime_type" type="string" indexed="true" stored="true"/>
+   <field name="file_name" type="text_general" indexed="true" stored="true"/>
+   <field name="mime_type" type="text_general" indexed="true" stored="true"/>
    <field name="file_format" type="text_general" indexed="true" stored="true"/>
    <field name="format_version" type="text_general" indexed="true" stored="true"/>
    <field name="file_size" type="long" indexed="true" stored="true"/>
@@ -320,10 +320,10 @@
 
    <!-- Other fields -->
    <field name="device" type="text_general" indexed="true" stored="true"/>
-   <field name="device_serial_number" type="string" indexed="true" stored="true"/>
+   <field name="device_serial_number" type="text_general" indexed="true" stored="true"/>
    <field name="software" type="text_general" indexed="true" stored="true"/>
-   <field name="software_serial_number" type="string" indexed="true" stored="true"/>
-   <field name="tags" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="software_serial_number" type="text_general" indexed="true" stored="true"/>
+   <field name="tags" type="text_general" indexed="true" stored="true" multiValued="true"/>
 
    <!-- Main body of document extracted by SolrCell.
         NOTE: This field is not indexed by default, since it is also copied to "text"
