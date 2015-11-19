@@ -121,7 +121,7 @@
    <field name="sub_unit_no" type="text_general" indexed="true" stored="true"/>
    <field name="first_part" type="string" indexed="true" stored="true"/>
    <field name="immutable" type="string" indexed="true" stored="true"/>
-   <field name="form" type="string" indexed="true" stored="true"/>
+   <field name="form" type="string_lowercase" indexed="true" stored="true"/>
    <field name="bib_level" type="string" indexed="true" stored="true"/>
    <field name="digital_status" type="string" indexed="true" stored="true"/>
    <field name="creator" type="text_general" indexed="true" stored="true"/>
@@ -635,6 +635,17 @@
         <tokenizer class="solr.StandardTokenizerFactory"/>
         <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    
+    <fieldType name="string_lowercase" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
     </fieldType>
