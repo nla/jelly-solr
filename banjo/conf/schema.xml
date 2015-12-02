@@ -211,6 +211,10 @@
    <field name="sheet_creation_date" type="date" indexed="true" stored="true"/>
    <field name="total_duration" type="float" indexed="true" stored="true"/>
    <field name="copy_roles" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="additional_title" type="text_general" indexed="true" stored="true"/>
+   <field name="additional_series" type="text_general" indexed="true" stored="true"/>
+   <field name="additional_contributor" type="text_general" indexed="true" stored="true"/>
+   <field name="additional_creator" type="text_general" indexed="true" stored="true"/>
 
    <!-- Copy fields -->
    <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
