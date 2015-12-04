@@ -208,7 +208,7 @@
    <field name="work_created_during_migration" type="boolean" indexed="true" stored="true"/>
    <field name="additional_series_statement" type="text_general" indexed="true" stored="true"/>
    <field name="sheet_name" type="text_general" indexed="true" stored="true"/>
-   <field name="sheet_creation_date" type="date" indexed="true" stored="true"/>
+   <field name="sheet_creation_date" type="text_general" indexed="true" stored="true"/>
    <field name="total_duration" type="float" indexed="true" stored="true"/>
    <field name="copy_roles" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="additional_title" type="text_general" indexed="true" stored="true"/>
