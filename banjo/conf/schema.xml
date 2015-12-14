@@ -466,6 +466,10 @@
 <copyField source="rights" dest="text"/>
 <copyField source="acknowledgement_party" dest="text"/>
 <copyField source="acknowledgement_type" dest="text"/>
+   <copyField source="additional_title" dest="text"/>
+   <copyField source="additional_series" dest="text"/>
+   <copyField source="additional_contributor" dest="text"/>
+   <copyField source="additional_creator" dest="text"/>
 
   <!-- Copy fields for facetting -->
   <copyField source="sub_unit_type" dest="sub_unit_type_str"/>
