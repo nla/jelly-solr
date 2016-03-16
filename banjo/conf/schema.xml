@@ -170,6 +170,7 @@
    <field name="access_conditions" type="string" indexed="true" stored="true"/>
    <field name="internal_access_conditions" type="string" indexed="true" stored="true"/>
    <field name="allow_highres_download" type="boolean" indexed="true" stored="true"/>
+   <field name="allow_onsite_access" type="boolean" indexed="true" stored="true"/>
    <field name="ingest_locked" type="boolean" indexed="true" stored="true"/>
    <field name="ingest_job_id" type="long" indexed="true" stored="true"/>
    <field name="expiry_date" type="int" indexed="true" stored="true"/>
