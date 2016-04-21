@@ -176,6 +176,7 @@
    <field name="expiry_date" type="int" indexed="true" stored="true"/>
    <field name="constraint" type="text_general" indexed="true" stored="true" multiValued="true"/>
    <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
+   <field name="commercial_status" type="text_general" indexed="true" stored="true"/>
    <field name="issue_date" type="date" indexed="true" stored="true"/>
    <field name="holding_number" type="text_general" indexed="true" stored="true"/>
    <field name="rights" type="text_general" indexed="true" stored="true"/>
