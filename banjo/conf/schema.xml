@@ -218,6 +218,7 @@
    <field name="additional_series" type="text_general" indexed="true" stored="true"/>
    <field name="additional_contributor" type="text_general" indexed="true" stored="true"/>
    <field name="additional_creator" type="text_general" indexed="true" stored="true"/>
+   <field name="deposit_type" type="string" indexed="true" stored="true"/>
 
    <!-- Copy fields -->
    <!-- id, pi, type, dcm_work_pid, record_source, local_system_no, alias_pi, internal_comments, external_comments,
