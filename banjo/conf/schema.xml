@@ -219,9 +219,9 @@
    <field name="additional_contributor" type="text_general" indexed="true" stored="true"/>
    <field name="additional_creator" type="text_general" indexed="true" stored="true"/>
    <field name="access_agreement" type="string" indexed="true" stored="true"/>
-   <field name="access_agreement_reason_for_change" type="text_general" indexed="true" stored="true"/>
-   <field name="access_condition_reason_for_change" type="text_general" indexed="true" stored="true"/>
-   <field name="commercial_status_reason_for_change" type="text_general" indexed="true" stored="true"/>
+   <field name="access_agreement_reason_for_change" type="string" indexed="true" stored="true"/>
+   <field name="access_condition_reason_for_change" type="string" indexed="true" stored="true"/>
+   <field name="commercial_status_reason_for_change" type="string" indexed="true" stored="true"/>
    <field name="access_agreement_reason_for_change_sum" type="text_general" indexed="true" stored="true"/>
    <field name="access_condition_reason_for_change_sum" type="text_general" indexed="true" stored="true"/>
    <field name="commercial_status_reason_for_change_sum" type="text_general" indexed="true" stored="true"/>
