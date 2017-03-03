@@ -175,6 +175,7 @@
    <field name="ingest_job_id" type="long" indexed="true" stored="true"/>
    <field name="expiry_date" type="int" indexed="true" stored="true"/>
    <field name="constraint" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="creative_commons" type="string" indexed="true" stored="true"/>
    <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
    <field name="commercial_status" type="text_general" indexed="true" stored="true"/>
    <field name="deposit_type" type="string" indexed="true" stored="true"/>
