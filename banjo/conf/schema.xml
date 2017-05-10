@@ -175,6 +175,7 @@
    <field name="ingest_job_id" type="long" indexed="true" stored="true"/>
    <field name="expiry_date" type="int" indexed="true" stored="true"/>
    <field name="constraint" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   <field name="creative_commons" type="string" indexed="true" stored="true"/>
    <field name="copyright_policy" type="text_general" indexed="true" stored="true"/>
    <field name="commercial_status" type="text_general" indexed="true" stored="true"/>
    <field name="deposit_type" type="string" indexed="true" stored="true"/>
@@ -320,8 +321,8 @@
    <field name="colour_profile" type="text_general" indexed="true" stored="true"/>
    <field name="cp_location" type="text_general" indexed="true" stored="true"/>
    <field name="application" type="text_general" indexed="true" stored="true"/>
-   <field name="application_date_created" type="text_general" indexed="true" stored="true"/>
-   <field name="date_digitised" type="text_general" indexed="true" stored="true"/>
+   <field name="application_date_created" type="date" indexed="true" stored="true"/>
+   <field name="date_digitised" type="date" indexed="true" stored="true"/>
    <field name="manufacture_make" type="text_general" indexed="true" stored="true"/>
    <field name="manufacture_model_name" type="text_general" indexed="true" stored="true"/>
    <field name="manufacture_serial_number" type="text_general" indexed="true" stored="true"/>
