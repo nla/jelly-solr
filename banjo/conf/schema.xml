@@ -313,6 +313,8 @@
    <field name="bit_depth" type="int" indexed="true" stored="true"/>
    <field name="encoding" type="text_general" indexed="true" stored="true"/>
    <field name="resolution" type="text_general" indexed="true" stored="true"/>
+   <field name="x_resolution" type="float" indexed="true" stored="true"/>
+   <field name="y_resolution" type="float" indexed="true" stored="true"/>
    <field name="resolution_unit" type="text_general" indexed="true" stored="true"/>
    <field name="colour_space" type="text_general" indexed="true" stored="true"/>
    <field name="orientation" type="text_general" indexed="true" stored="true"/>
