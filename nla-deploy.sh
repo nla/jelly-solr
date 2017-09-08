@@ -13,4 +13,5 @@ tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp solr-
 mkdir -p $1/ROOT
 cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
 cp -R solr-$SOLR_VERSION/server/lib/* $1/ROOT/WEB-INF/lib
+cp -R solr-$SOLR_VERSION/server/lib/ext/* $1/ROOT/WEB-INF/lib
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
