@@ -9,6 +9,7 @@ else
   TAR=solr-$SOLR_VERSION.tgz
 fi
 
-tar -xf $TAR solr-$SOLR_VERSION/dist
+tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp
+cp -R solr-$SOLR_VERSION/server/solr-webapp $1/ROOT
 mkdir -p $1/ROOT/WEB-INF/solr
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
