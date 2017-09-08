@@ -16,4 +16,5 @@ cp solr-$SOLR_VERSION/server/lib/*.jar $1/ROOT/WEB-INF/lib
 cp solr-$SOLR_VERSION/server/lib/ext/*.jar $1/ROOT/WEB-INF/lib
 mkdir $1/ROOT/WEB-INF/classes
 cp solr-$SOLR_VERSION/server/resources/log4j.properties $1/ROOT/WEB-INF/classes
+mkdir $1/ROOT/WEB-INF/solr
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
