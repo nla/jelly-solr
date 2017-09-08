@@ -107,8 +107,8 @@
       trailing underscores (e.g. _version_) are reserved.
    -->
 
-   <field name="indexed_at" type="date" indexed="true" stored="true" required="true" />
-   <field name="id" type="long" indexed="true" stored="true" required="true" />
+   <field name="indexed_at" type="date" indexed="true" stored="true"/>
+   <field name="id" type="long" indexed="true" stored="true" required="true"/>
    <field name="collection" type="text_general" indexed="true" stored="true"/>
    <field name="type" type="string" indexed="true" stored="true"/>
    <field name="sub_type" type="string" indexed="true" stored="true"/>
