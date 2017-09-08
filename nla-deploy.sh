@@ -10,6 +10,6 @@ else
 fi
 
 tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp
-cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
 mkdir -p $1/ROOT/WEB-INF/solr
+cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
