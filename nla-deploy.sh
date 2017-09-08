@@ -9,9 +9,10 @@ else
   TAR=solr-$SOLR_VERSION.tgz
 fi
 
-tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp solr-$SOLR_VERSION/server/lib/metrics* solr-$SOLR_VERSION/server/lib/ext
+tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp solr-$SOLR_VERSION/server/lib/metrics* solr-$SOLR_VERSION/server/lib/ext solr-$SOLR_VERSION/server/resources/log4j.properties
 mkdir -p $1/ROOT
 cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
-cp -R solr-$SOLR_VERSION/server/lib/* $1/ROOT/WEB-INF/lib
-cp -R solr-$SOLR_VERSION/server/lib/ext/* $1/ROOT/WEB-INF/lib
+cp solr-$SOLR_VERSION/server/lib/*.jar $1/ROOT/WEB-INF/lib
+cp solr-$SOLR_VERSION/server/lib/ext/*.jar $1/ROOT/WEB-INF/lib
+cp solr-$SOLR_VERSION/server/resources/log4j.properties $1/ROOT/WEB-INF/lib
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
