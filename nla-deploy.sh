@@ -10,5 +10,5 @@ else
 fi
 
 tar -xf $TAR solr-$SOLR_VERSION/dist
-mkdir $1/ROOT/WEB-INF/solr
+mkdir -p $1/ROOT/WEB-INF/solr
 cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
