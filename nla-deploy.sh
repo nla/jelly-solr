@@ -9,7 +9,7 @@ else
   TAR=solr-$SOLR_VERSION.tgz
 fi
 
-tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp solr-$SOLR_VERSION/server/lib/metrics.* solr-$SOLR_VERSION/server/lib/ext
+tar -xf $TAR solr-$SOLR_VERSION/dist solr-$SOLR_VERSION/server/solr-webapp solr-$SOLR_VERSION/server/lib/metrics* solr-$SOLR_VERSION/server/lib/ext
 mkdir -p $1/ROOT
 cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
 cp -R solr-$SOLR_VERSION/server/lib/* $1/ROOT/WEB-INF/lib
