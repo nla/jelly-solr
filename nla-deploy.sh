@@ -39,7 +39,7 @@ cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
 
 # pull in the log configuration
 mkdir $1/ROOT/WEB-INF/classes
-cp solr-$SOLR_VERSION/server/resources/log4j.properties $1/ROOT/WEB-INF/classes
+cp log4j.properties $1/ROOT/WEB-INF/classes
 
 # finally, our index configurations
 mkdir $1/ROOT/WEB-INF/solr
