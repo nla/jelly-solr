@@ -39,8 +39,10 @@ cp -R solr-$SOLR_VERSION/server/solr-webapp/webapp/* $1/ROOT
 
 # pull in the log configuration
 mkdir $1/ROOT/WEB-INF/classes
-cp log4j.properties $1/ROOT/WEB-INF/classes
+cp resources/log4j.properties $1/ROOT/WEB-INF/classes
+
+cp resources/web.xml $1/ROOT/WEB-INF
 
 # finally, our index configurations
 mkdir $1/ROOT/WEB-INF/solr
-cp -a solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
+cp -a resources/solr.xml jelly banjo banjo-jobs $1/ROOT/WEB-INF/solr
