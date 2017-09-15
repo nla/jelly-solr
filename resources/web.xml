@@ -22,12 +22,6 @@
          metadata-complete="true"
 >
 
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-
     <!-- Any path (name) registered in solrconfig.xml will be sent to that filter -->
     <filter>
         <filter-name>SolrRequestFilter</filter-name>
