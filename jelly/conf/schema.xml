@@ -99,7 +99,7 @@
        It supports doc values but in that case the field needs to be
        single-valued and either required or have a default value.
   -->
-  <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
+  <fieldType name="string" class="solr.StrField" />
   <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true" />
 
   <!-- boolean type: "true" or "false" -->
