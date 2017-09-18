@@ -66,10 +66,7 @@
     <analyzer type="index">
       <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-hyphens.txt" />
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
-      
-      <!--      <filter class="solr.ICUFoldingFilterFactory"/> -->
       <filter class="org.apache.lucene.analysis.icu.ICUFoldingFilterFactory"/>
-
       <filter class="solr.EnglishPossessiveFilterFactory"/>
       <filter class="solr.CJKBigramFilterFactory" outputUnigrams="true"/>
       <filter class="solr.CommonGramsFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt"/>
@@ -80,11 +77,7 @@
     <analyzer type="query">
       <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-hyphens.txt" />
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
-
-
-      <!-- <filter class="solr.ICUFoldingFilterFactory"/> -->
       <filter class="org.apache.lucene.analysis.icu.ICUFoldingFilterFactory"/>
-
       <filter class="solr.EnglishPossessiveFilterFactory"/>
       <filter class="solr.CJKBigramFilterFactory" outputUnigrams="true"/>
       <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
