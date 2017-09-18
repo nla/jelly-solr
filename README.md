@@ -1,10 +1,20 @@
 Example jettyctl config:
 
-###Latest Jelly Solr version : 1.4.0
+Latest Jelly Solr version : 1.18.0
 
 ```sh
-PORT=10340
+PORT=10430
 REPO=git@github.com:nla/jelly-solr.git
-JAVA_OPTS=(-Dsolr.solr.home=/apps/$NODE/ROOT/WEB-INF/solr -Dsolr.data.dir=/ssd/somewhere)
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+ROOT_URL_PREFIX=/solr6
+
+JAVA_OPTS=-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
+    -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=8 -XX:+UseConcMarkSweepGC \
+    -XX:+UseParNewGC -XX:ConcGCThreads=4 -XX:ParallelGCThreads=4 \
+    -XX:+CMSScavengeBeforeRemark -XX:PretenureSizeThreshold=64m \
+    -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=50 \
+    -XX:CMSMaxAbortablePrecleanTime=6000 -XX:+CMSParallelRemarkEnabled \
+    -XX:+ParallelRefProcEnabled -Dsolr.solr.home=/apps/${NODE}/ROOT/WEB-INF/solr 
+    -Dsolr.data.dir=/somplace/somewherexport/solr/${NODE} -Djetty.port=10340 
+    -Dsolr.install.dir=/apps/${NODE}/ROOT
 ```
-Note: Jelly Solr pulls in a custom nla package build for specific versions of SOLR (see nla-deploy.sh to see what the current package and SOLR versions are). Upgrading Jelly Solr to a later version of SOLR (eg: SOLR 5.x) will require replacing the nla package with one built for that later SOLR version. Releases for later versions are available on the NLA's nexus maven repository.
