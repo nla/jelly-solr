@@ -5,8 +5,7 @@ Example jettyctl config:
 ```sh
 PORT=10430
 REPO=git@github.com:nla/jelly-solr.git
-JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
-ROOT_URL_PREFIX=/solr6
+ROOT_URL_PREFIX=/solr
 
 JAVA_OPTS=-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
     -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=8 -XX:+UseConcMarkSweepGC \
@@ -14,13 +13,14 @@ JAVA_OPTS=-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
     -XX:+CMSScavengeBeforeRemark -XX:PretenureSizeThreshold=64m \
     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=50 \
     -XX:CMSMaxAbortablePrecleanTime=6000 -XX:+CMSParallelRemarkEnabled \
-    -XX:+ParallelRefProcEnabled -Dsolr.solr.home=/apps/${NODE}/ROOT/WEB-INF/solr 
-    -Dsolr.data.dir=/somplace/somewherexport/solr/${NODE} -Djetty.port=10340 
-    -Dsolr.install.dir=/apps/${NODE}/ROOT
+    -XX:+ParallelRefProcEnabled -Dsolr.solr.home=/jetty-app-deploy-location/WEB-INF/solr 
+    -Dsolr.data.dir=/somplace/somewhere -Djetty.port=10340 
+    -Dsolr.install.dir=/jetty-app-deploy-location
 ```
-
 
 #### Local deployment
 1. Run the shell script `local-deploy.sh` one time, to prepare for running these indexes locally on a Mac.
 
 2. To run: `mvn jetty:run-forked -Dhost=.nla.gov.au -Djetty.port=9999`
+
+Note: Requires java 8 
