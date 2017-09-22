@@ -18,3 +18,7 @@ JAVA_OPTS=-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
     -Dsolr.data.dir=/somplace/somewherexport/solr/${NODE} -Djetty.port=10340 
     -Dsolr.install.dir=/apps/${NODE}/ROOT
 ```
+
+To prepare to run these indexes locally on a Mac, run the shell script `local-deploy.sh` (just the once).
+
+To run: `mvn jetty:run-forked -Dhost=.nla.gov.au -Djetty.port=9999`

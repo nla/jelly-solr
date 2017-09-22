@@ -3,6 +3,7 @@
 SOLR_VERSION=6.6.1
 
 curl -O http://archive.apache.org/dist/lucene/solr/$SOLR_VERSION/solr-$SOLR_VERSION.tgz
+TAR=solr-$SOLR_VERSION.tgz
 
 tar -xf $TAR solr-$SOLR_VERSION/dist \
              solr-$SOLR_VERSION/contrib \
@@ -41,3 +42,5 @@ cp resources/web.xml solr-webapp/ROOT/WEB-INF
 # finally, our index configurations
 mkdir solr-webapp/ROOT/WEB-INF/solr
 cp -a resources/solr.xml jelly banjo banjo-jobs solr-webapp/ROOT/WEB-INF/solr
+rm -Rf solr-$SOLR_VERSION
+rm $TAR
