@@ -7,4 +7,25 @@
 	<packaging>jar</packaging>
 	<version>1.18.0</version>
 	<name>jelly-solr</name>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>9.4.6.v20170531</version>
+          <configuration>
+            <jvmArgs>-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=8 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ConcGCThreads=4 -XX:ParallelGCThreads=4 -XX:+CMSScavengeBeforeRemark -XX:PretenureSizeThreshold=64m -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=50 -XX:CMSMaxAbortablePrecleanTime=6000 -XX:+CMSParallelRemarkEnabled -XX:+ParallelRefProcEnabled -Dsolr.solr.home=${project.basedir}/solr-webapp/ROOT/WEB-INF/solr -Dsolr.data.dir=${project.basedir}/solr-webapp/indexes -Dsolr.install.dir=${project.basedir}/solr-webapp/ROOT -Dsolr.log=${project.basedir}/solr-webapp -Djetty.port=${jetty.port}</jvmArgs>
+            <webAppSourceDirectory>${project.basedir}/solr-webapp/ROOT</webAppSourceDirectory>
+            <webApp>
+              <contextPath>/solr</contextPath>
+              <descriptor>${project.basedir}/solr-webapp/ROOT/WEB-INF/web.xml</descriptor>
+            </webApp>
+            <classesDirectory>${project.basedir}/solr-webapp/ROOT/WEB-INF/lib</classesDirectory>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+    
+
 </project>

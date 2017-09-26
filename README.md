@@ -1,6 +1,6 @@
-Example jettyctl config:
+## Latest Jelly Solr version : 1.18.0
 
-Latest Jelly Solr version : 1.18.0
+Example jettyctl config:
 
 ```sh
 PORT=10430
@@ -17,4 +17,11 @@ JAVA_OPTS=-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
     -Dsolr.data.dir=/somplace/somewhere -Djetty.port=10340 
     -Dsolr.install.dir=/jetty-app-deploy-location
 ```
+
+#### Local deployment
+1. Run the shell script `local-deploy.sh` one time only (it takes a little time), to prepare for running these indexes locally on a Mac. 
+
+
+2. To run: `mvn jetty:run-forked -Dhost=.nla.gov.au -Djetty.port=9999`
+
 Note: Requires java 8 
