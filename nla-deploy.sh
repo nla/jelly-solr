@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOLR_VERSION=6.6.1
+SOLR_VERSION=6.6.2
 
 if [ -f /bss/unix/src/solr-$SOLR_VERSION.tgz ]; then
   TAR=/bss/unix/src/solr-$SOLR_VERSION.tgz

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOLR_VERSION=6.6.1
+SOLR_VERSION=6.6.2
 
 curl -O http://archive.apache.org/dist/lucene/solr/$SOLR_VERSION/solr-$SOLR_VERSION.tgz
 TAR=solr-$SOLR_VERSION.tgz
