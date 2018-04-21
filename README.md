@@ -7,7 +7,7 @@ PORT=10430
 REPO=git@github.com:nla/jelly-solr.git
 ROOT_URL_PREFIX=/solr
 
-JAVA_OPTS=-server -Xms512m -Xmx512m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
+JAVA_OPTS=-server -Xms512m -Xmx2048m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
     -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=8 -XX:+UseConcMarkSweepGC \
     -XX:+UseParNewGC -XX:ConcGCThreads=4 -XX:ParallelGCThreads=4 \
     -XX:+CMSScavengeBeforeRemark -XX:PretenureSizeThreshold=64m \
