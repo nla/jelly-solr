@@ -3,7 +3,7 @@
 Example jettyctl config:
 
 ```sh
-PORT=10430
+PORT=10340
 REPO=git@github.com:nla/jelly-solr.git
 ROOT_URL_PREFIX=/solr
 
