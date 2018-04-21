@@ -1,10 +1,27 @@
-Example jettyctl config:
+## Latest Jelly Solr version : 1.18.0
 
-###Latest Jelly Solr version : 1.4.0
+Example jettyctl config:
 
 ```sh
 PORT=10340
 REPO=git@github.com:nla/jelly-solr.git
-JAVA_OPTS=(-Dsolr.solr.home=/apps/$NODE/ROOT/WEB-INF/solr -Dsolr.data.dir=/ssd/somewhere)
+ROOT_URL_PREFIX=/solr
+
+JAVA_OPTS=-server -Xms512m -Xmx2048m -XX:NewRatio=3 -XX:SurvivorRatio=4 \
+    -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=8 -XX:+UseConcMarkSweepGC \
+    -XX:+UseParNewGC -XX:ConcGCThreads=4 -XX:ParallelGCThreads=4 \
+    -XX:+CMSScavengeBeforeRemark -XX:PretenureSizeThreshold=64m \
+    -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=50 \
+    -XX:CMSMaxAbortablePrecleanTime=6000 -XX:+CMSParallelRemarkEnabled \
+    -XX:+ParallelRefProcEnabled -Dsolr.solr.home=/jetty-app-deploy-location/WEB-INF/solr 
+    -Dsolr.data.dir=/somplace/somewhere -Djetty.port=10340 
+    -Dsolr.install.dir=/jetty-app-deploy-location
 ```
-Note: Jelly Solr pulls in a custom nla package build for specific versions of SOLR (see nla-deploy.sh to see what the current package and SOLR versions are). Upgrading Jelly Solr to a later version of SOLR (eg: SOLR 5.x) will require replacing the nla package with one built for that later SOLR version. Releases for later versions are available on the NLA's nexus maven repository.
+
+#### Local deployment
+1. Run the shell script `local-deploy.sh` one time only (it takes a little time), to prepare for running these indexes locally on a Mac. 
+
+
+2. To run: `mvn jetty:run-forked -Dhost=.nla.gov.au -Djetty.port=9999`
+
+Note: Requires java 8 
