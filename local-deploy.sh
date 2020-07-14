@@ -8,8 +8,7 @@ TAR=solr-$SOLR_VERSION.tgz
 tar -xf $TAR solr-$SOLR_VERSION/dist \
              solr-$SOLR_VERSION/contrib \
              solr-$SOLR_VERSION/server/solr-webapp \
-             solr-$SOLR_VERSION/server/lib/metrics* \
-             solr-$SOLR_VERSION/server/lib/ext \
+             solr-$SOLR_VERSION/server/lib/ \
              solr-$SOLR_VERSION/server/resources/log4j.properties
 
 mkdir -p solr-webapp/ROOT/WEB-INF/lib
