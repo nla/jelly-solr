@@ -166,6 +166,7 @@
   <field name="physical_container_number" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="physical_container_type" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="pi" type="string" indexed="true" stored="true"/>
+  <field name="project_id" type="long" multiValued="true" indexed="true" stored="true"/>
   <field name="province" type="text_general" indexed="true" stored="false"/>
   <field name="publication_category" type="text_general" indexed="true" stored="true"/>
   <field name="publisher" type="text_general" indexed="true" stored="true"/>
