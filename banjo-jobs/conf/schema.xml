@@ -97,7 +97,6 @@
 
   <!--  project  -->
   <field name="parent_id" type="long" indexed="true" stored="true"/>
-  <field name="project_visibility" type="string" indexed="true" stored="true"/>
   <field name="started" type="date" indexed="true" stored="true"/>
 
   <!--  audit fields  -->
