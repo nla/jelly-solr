@@ -70,6 +70,7 @@
   <field name="agent" type="string" indexed="true" stored="true"/>
   <field name="file_system_upload" type="string" indexed="true" stored="true"/>
   <field name="job_type" type="string" indexed="true" stored="true"/>
+  <field name="mass_upload_type" type="string" indexed="true" stored="true"/>
   <field name="secured" type="string" indexed="true" stored="true"/>
   <field name="instructions_to_uploader" type="text_general" indexed="true" stored="true"/>
 
