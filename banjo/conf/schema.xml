@@ -10,6 +10,7 @@
   <field name="access_condition_reason_for_change" type="string" indexed="true" stored="true"/>
   <field name="access_condition_reason_for_change_sum" type="text_general" indexed="true" stored="true"/>
   <field name="access_conditions" type="string" indexed="true" stored="true"/>
+  <field name="access_condition_after_project_reveal" type="string" indexed="true" stored="true"/>
   <field name="acknowledgement_party" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="acknowledgement_type" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="acquisition_category" type="text_general" indexed="true" stored="true"/>
@@ -270,7 +271,7 @@
   <dynamicField name="*_ws" type="text_ws" indexed="true" stored="true"/>
 
   <copyField source="access_conditions" dest="text"/>
-  <copyField source="access_conditions" dest="text"/>
+  <copyField source="access_condition_after_project_reveal" dest="text"/>
   <copyField source="acknowledgement_party" dest="text"/>
   <copyField source="acknowledgement_type" dest="text"/>
   <copyField source="acquisition_category" dest="text"/>
