@@ -151,7 +151,7 @@
   <field name="manufacture_serial_number" type="text_general" indexed="true" stored="true"/>
   <field name="map_datum" type="text_general" indexed="true" stored="false"/>
   <field name="material_from_multiple_sources" type="boolean" indexed="true" stored="true"/>
-  <field name="material_type" type="text_general" indexed="true" stored="true"/>
+  <field name="material_type" type="string" indexed="true" stored="true"/>
   <field name="metering_mode" type="text_general" indexed="true" stored="true"/>
   <field name="mime_type" type="string" indexed="true" stored="true"/>
   <field name="more_ilms_details_required" type="boolean" indexed="true" stored="true"/>
