@@ -123,7 +123,7 @@
   <field name="gps_version" type="text_general" indexed="true" stored="false"/>
   <field name="heading" type="text_general" indexed="true" stored="true"/>
   <field name="holding_number" type="text_general" indexed="true" stored="true"/>
-  <field name="partner_holding_nuc" type="text_general" indexed="true" stored="true"/>
+  <field name="partner_holding_nuc" type="string" indexed="true" stored="true"/>
   <field name="id" type="long" indexed="true" required="true" stored="true"/>
   <field name="ilms_sent_date_time" type="date" indexed="true" stored="true"/>
   <field name="image_length" type="int" indexed="true" stored="true"/>
@@ -326,7 +326,6 @@
   <copyField source="form" dest="text"/>
   <copyField source="genre" dest="text"/>
   <copyField source="holding_number" dest="text"/>
-  <copyField source="partner_holding_nuc" dest="text"/>
   <copyField source="immutable" dest="text"/>
   <copyField source="internal_access_conditions" dest="text"/>
   <copyField source="internal_comments" dest="text"/>
