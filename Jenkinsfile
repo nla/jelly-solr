@@ -1,11 +1,6 @@
-import au.gov.nla.pipeline.Git
-
-final Git git = new Git(this)
-
-if (git.isMasterBranch()) {
-    node("hammer") {
-        stage("Deploy to dev") {
-            sh "sudo jvmctl deploy dl-solr"
-        }
-    }
-}
+nlaBuild steps: this,
+    applicationName: "dl-solr",
+    deployToDev: true,
+    devHostname: "hoist",
+    deployToNexus: true,
+    ignoreSonar: true
