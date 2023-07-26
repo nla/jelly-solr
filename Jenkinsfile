@@ -1,5 +1,5 @@
 nlaBuild steps: this,
     applicationName: "dl-solr",
     deployToDev: true,
-    devHostname: "hammer",
+    devHostname: "hoist",
     deployToNexus: true,
